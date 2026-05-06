@@ -1,0 +1,407 @@
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#070707;color:white;font-family:Arial,sans-serif}
+a{text-decoration:none;color:inherit}
+
+.page{max-width:1220px;margin:auto;padding:22px}
+
+/* HERO */
+.hero{
+  min-height:470px;
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:18px;
+  overflow:hidden;
+  position:relative;
+  background:
+  linear-gradient(90deg,rgba(0,0,0,.85),rgba(0,0,0,.45)),
+  url("https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=1600") center/cover;
+  padding:34px;
+}
+
+.back{color:#f5b21b;font-weight:800;display:inline-flex;gap:8px;align-items:center}
+.favorite{
+  position:absolute;
+  top:25px;
+  right:25px;
+  width:52px;
+  height:52px;
+  border-radius:50%;
+  border:1px solid #777;
+  background:rgba(0,0,0,.45);
+  color:white;
+}
+
+.hero-info{position:absolute;left:34px;bottom:34px;max-width:560px}
+.area{
+  display:inline-flex;
+  gap:6px;
+  align-items:center;
+  border:1px solid rgba(255,255,255,.25);
+  padding:8px 13px;
+  border-radius:20px;
+  background:rgba(0,0,0,.5)
+}
+
+.hero h1{
+  font-size:58px;
+  margin:25px 0 10px;
+  font-family:Georgia,serif
+}
+
+.stars{color:#ffb515;font-size:20px;margin-bottom:14px}
+.desc{font-size:17px;line-height:1.5;color:#eee}
+
+.buttons{display:flex;gap:14px;margin-top:28px}
+
+.gold-btn,.dark-btn{
+  height:52px;
+  padding:0 24px;
+  border-radius:9px;
+  font-weight:900;
+  border:none;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  cursor:pointer
+}
+
+.gold-btn{
+  background:linear-gradient(135deg,#ffbf24,#d99000);
+  color:#111
+}
+
+.dark-btn{
+  background:rgba(0,0,0,.5);
+  color:white;
+  border:1px solid rgba(255,255,255,.25)
+}
+
+/* AÇIK KART */
+.open-card{
+  position:absolute;
+  right:25px;
+  bottom:22px;
+  background:rgba(18,18,18,.9);
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:12px;
+  padding:20px 25px;
+  min-width:230px;
+}
+
+.open-card p{
+  margin-top:10px;
+  font-size:17px;
+  font-weight:800
+}
+
+/* YANIP SÖNEN AÇIK */
+.open-blink{
+  color:#32d26a;
+  font-weight:900;
+  animation:blinkOpen 1s infinite
+}
+
+@keyframes blinkOpen{
+  0%,100%{opacity:1}
+  50%{opacity:.3}
+}
+
+/* INFO */
+.info-grid{
+  margin-top:18px;
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:15px;
+  background:linear-gradient(180deg,#171717,#0d0d0d);
+  display:grid;
+  grid-template-columns:repeat(4,1fr)
+}
+
+.info-card{
+  padding:28px;
+  border-right:1px solid rgba(255,255,255,.14);
+  display:flex;
+  gap:18px;
+  align-items:center
+}
+
+.info-card:last-child{border-right:0}
+
+.info-card i{
+  color:#f5b21b;
+  width:38px;
+  height:38px
+}
+
+.info-card small{
+  color:#f5b21b;
+  font-weight:900
+}
+
+.info-card h3{
+  font-size:22px;
+  margin:8px 0 5px
+}
+
+.info-card p{color:#ddd}
+
+/* SECTION */
+.section{
+  margin-top:18px;
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:15px;
+  background:linear-gradient(180deg,#151515,#0b0b0b);
+  padding:26px
+}
+
+.section-title{
+  font-size:24px;
+  margin-bottom:20px;
+  display:flex;
+  align-items:center;
+  gap:10px
+}
+
+.section-title i{color:#f5b21b}
+
+/* MENU */
+.menu-tabs{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px
+}
+
+.tab-btn{
+  height:54px;
+  border-radius:9px;
+  border:1px solid rgba(255,181,21,.45);
+  background:transparent;
+  color:white;
+  font-weight:900;
+  cursor:pointer
+}
+
+.tab-btn.active{
+  background:linear-gradient(135deg,#b98214,#f0b21e);
+  color:white
+}
+
+.menu-wrapper{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin-top:10px
+}
+
+.menu-box{
+  border:1px solid rgba(255,181,21,.4);
+  border-radius:10px;
+  padding:20px 28px
+}
+
+.menu-row{
+  display:grid;
+  grid-template-columns:1fr auto auto;
+  gap:12px;
+  align-items:center;
+  padding:11px 0;
+  border-bottom:1px dashed rgba(255,255,255,.12)
+}
+
+.menu-row:last-child{border-bottom:0}
+
+.menu-row h4{font-size:19px}
+
+.menu-row small{
+  display:block;
+  color:#bbb;
+  margin-top:3px
+}
+
+.menu-row b{font-size:22px}
+
+.cheapest{
+  color:#ffcc2d;
+  border:1px solid #ffcc2d;
+  padding:5px 11px;
+  border-radius:20px;
+  font-size:12px;
+  font-weight:900
+}
+
+.note{
+  color:#aaa;
+  margin-top:18px;
+  border-top:1px solid rgba(255,255,255,.1);
+  padding-top:14px
+}
+
+/* GALERİ */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px
+}
+
+.photo img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  border-radius:10px
+}
+
+.photo p{
+  text-align:center;
+  margin-top:9px;
+  color:#eee
+}
+
+/* MOBILE */
+@media(max-width:900px){
+
+  .hero{min-height:620px}
+
+  .hero-info{
+    position:relative;
+    left:auto;
+    bottom:auto;
+    margin-top:70px
+  }
+
+  .open-card{
+    position:relative;
+    right:auto;
+    bottom:auto;
+    margin-top:25px
+  }
+
+  .hero h1{font-size:42px}
+
+  .info-grid,
+  .menu-wrapper,
+  .gallery{
+    grid-template-columns:1fr
+  }
+
+  .info-card{
+    border-right:0;
+    border-bottom:1px solid rgba(255,255,255,.12)
+  }
+}
+.price-edit {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+
+.price-edit input {
+  height: 46px;
+  background: #111;
+  border: 1px solid rgba(255,181,21,.4);
+  color: white;
+  border-radius: 8px;
+  padding: 0 12px;
+}
+
+.price-edit button {
+  background: #f5b21b;
+  color: #111;
+  border: none;
+  border-radius: 8px;
+  font-weight: 900;
+}
+.master-search {
+  margin-top: 28px;
+  max-width: 680px;
+  position: relative;
+}
+
+.master-field {
+  height: 58px;
+  border: 1px solid rgba(255,181,21,.55);
+  background: rgba(0,0,0,.62);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 18px;
+  box-shadow: 0 0 28px rgba(255,181,21,.18);
+}
+
+.master-field input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.master-results {
+  display: none;
+  position: absolute;
+  top: 68px;
+  left: 0;
+  right: 0;
+  background: rgba(8,8,8,.98);
+  border: 1px solid rgba(255,181,21,.45);
+  border-radius: 12px;
+  overflow: hidden;
+  z-index: 100;
+  box-shadow: 0 18px 45px rgba(0,0,0,.7);
+}
+
+.master-result {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  cursor: pointer;
+}
+
+.master-result:hover {
+  background: rgba(255,181,21,.12);
+}
+
+.master-result strong {
+  color: #fff;
+  font-size: 15px;
+}
+
+.master-result small {
+  display: block;
+  color: #aaa;
+  margin-top: 4px;
+}
+
+.master-price {
+  color: #f5a800;
+  font-size: 18px;
+  font-weight: 1000;
+  white-space: nowrap;
+}
+
+.master-empty {
+  padding: 15px;
+  color: #ccc;
+  font-weight: 700;
+}
+
+/* BeerAntalya kampanya fiyat görünümü */
+.price-box{display:flex;flex-direction:column;align-items:flex-end;line-height:1.05}
+.old-price{font-size:11px;color:#bbb;position:relative;display:inline-block}
+.old-price::after{content:"";position:absolute;left:0;right:0;top:50%;height:1.5px;background:#ff3b3b;transform:translateY(-50%)}
+.new-price{color:#f5a800;font-size:22px;font-weight:1000;line-height:1}
+.campaign-time{font-size:10px;color:#32d26a;font-weight:900;margin-top:2px;white-space:nowrap}
+
+
+.closed-blink{
+  color:#ff3b3b!important;
+  font-weight:900;
+  animation:blinkClosed 1s infinite;
+}
+@keyframes blinkClosed{
+  0%,100%{opacity:1}
+  50%{opacity:.35}
+}
+

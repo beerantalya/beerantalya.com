@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BeerAntalya Bölge</title>
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#070707;color:#fff;font-family:Arial,sans-serif}
+a{text-decoration:none;color:inherit}
+
+.navbar{
+  height:68px;
+  background:#050505;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 28px;
+  position:fixed;
+  inset:0 0 auto 0;
+  z-index:50;
+  border-bottom:1px solid rgba(255,255,255,.08)
+}
+.logo{font-size:28px;font-weight:900}
+.logo b{color:#f5a800}
+.back-link{
+  color:#f5a800;
+  font-weight:900;
+  border:1px solid rgba(255,181,21,.55);
+  padding:10px 14px;
+  border-radius:8px
+}
+
+.area-hero{
+  min-height:430px;
+  padding:125px 38px 48px;
+  position:relative;
+  background:
+    linear-gradient(90deg,rgba(0,0,0,.92),rgba(0,0,0,.55),rgba(0,0,0,.18)),
+    var(--area-img) center/cover no-repeat;
+  border-bottom:1px solid rgba(255,181,21,.28)
+}
+
+.area-hero h1{
+  font-size:64px;
+  line-height:.95;
+  font-weight:1000;
+  letter-spacing:1px
+}
+
+.area-hero h1 span{color:#f5a800}
+.area-hero p{
+  margin-top:20px;
+  max-width:650px;
+  color:#eee;
+  font-size:18px;
+  line-height:1.5
+}
+
+.area-stats{
+  margin-top:24px;
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap
+}
+.area-pill{
+  border:1px solid rgba(255,181,21,.55);
+  background:rgba(0,0,0,.48);
+  color:#f5a800;
+  padding:10px 14px;
+  border-radius:30px;
+  font-weight:900
+}
+
+.container{
+  max-width:1240px;
+  margin:0 auto;
+  padding:34px 28px 50px
+}
+
+.section-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  border-bottom:1px solid rgba(255,181,21,.55);
+  padding-bottom:12px;
+  margin-bottom:18px
+}
+
+.section-head h2{
+  font-size:28px;
+  font-weight:1000
+}
+
+.search-mini{
+  min-width:280px;
+  height:44px;
+  background:#111;
+  border:1px solid rgba(255,181,21,.45);
+  border-radius:8px;
+  padding:0 14px;
+  color:white;
+  outline:none;
+  font-weight:800
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px
+}
+
+.card{
+  background:linear-gradient(180deg,#181818,#0d0d0d);
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:12px;
+  overflow:hidden;
+  position:relative;
+  transition:.2s
+}
+
+.card:hover{
+  transform:translateY(-3px);
+  border-color:rgba(255,181,21,.6);
+  box-shadow:0 14px 35px rgba(0,0,0,.45)
+}
+
+.card img{
+  width:100%;
+  height:165px;
+  object-fit:cover
+}
+
+.badge{
+  position:absolute;
+  top:10px;
+  left:10px;
+  background:#f5a800;
+  color:#111;
+  padding:6px 10px;
+  border-radius:5px;
+  font-size:12px;
+  font-weight:1000
+}
+
+.card-body{padding:14px}
+.card h3{font-size:21px;margin-bottom:8px}
+.stars{color:#ffbf24;font-size:14px;margin-bottom:7px}
+.loc{color:#bbb;font-size:13px;margin-bottom:12px}
+
+.price-line{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:8px;
+  padding:10px;
+  margin-top:10px
+}
+
+.price-line small{
+  color:#aaa;
+  font-weight:800
+}
+
+.price-box{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  line-height:1.05
+}
+
+.old-price{
+  font-size:11px;
+  color:#bbb;
+  position:relative;
+  display:inline-block
+}
+
+.old-price::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  top:50%;
+  height:1.5px;
+  background:#ff3b3b;
+  transform:translateY(-50%)
+}
+
+.new-price{
+  color:#f5a800;
+  font-size:22px;
+  font-weight:1000;
+  line-height:1
+}
+
+.campaign-time{
+  font-size:10px;
+  color:#32d26a;
+  font-weight:900;
+  margin-top:2px;
+  white-space:nowrap
+}
+
+.open-chip{
+  display:inline-flex;
+  margin-top:10px;
+  padding:7px 10px;
+  border-radius:30px;
+  font-weight:1000;
+  font-size:12px
+}
+
+.open-chip.open{
+  color:#32d26a;
+  border:1px solid rgba(50,210,106,.6);
+  background:rgba(50,210,106,.10)
+}
+
+.open-chip.closed{
+  color:#ff3b3b;
+  border:1px solid rgba(255,59,59,.65);
+  background:rgba(255,59,59,.10)
+}
+
+.empty{
+  grid-column:1/-1;
+  padding:30px;
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:12px;
+  color:#ccc;
+  text-align:center;
+  font-weight:900
+}
+
+@media(max-width:900px){
+  .navbar{padding:0 14px}
+  .area-hero{padding:105px 20px 38px}
+  .area-hero h1{font-size:44px}
+  .section-head{align-items:stretch;flex-direction:column}
+  .search-mini{width:100%;min-width:0}
+  .cards{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="logo">🍺 Beer<b>Antalya</b></div>
+  <a class="back-link" href="index.html">← Ana Sayfa</a>
+</header>
+
+<section class="area-hero" id="areaHero">
+  <h1 id="areaTitle">BÖLGE <br><span>MEKANLARI</span></h1>
+  <p id="areaDesc">Bu bölgede bulunan mekanları, en ucuz bira fiyatlarını ve mekan detaylarını tek ekranda gör.</p>
+  <div class="area-stats">
+    <div class="area-pill" id="venueCount">0 Mekan</div>
+    <div class="area-pill" id="beerCount">0 Bira Fiyatı</div>
+    <div class="area-pill" id="cheapestInfo">En Ucuz: -</div>
+  </div>
+</section>
+
+<main class="container">
+  <div class="section-head">
+    <h2 id="listTitle">Mekanlar</h2>
+    <input class="search-mini" id="areaSearch" placeholder="Bu bölgede mekan ara...">
+  </div>
+
+  <div class="cards" id="areaCards"></div>
+</main>
+
+<script src="data.js"></script>
+<script>
+function getAreaFromUrl(){
+  const params = new URLSearchParams(window.location.search);
+  const raw = params.get("area") || "konyaalti";
+
+  const map = {
+    konyaalti:"Konyaaltı",
+    kaleici:"Kaleiçi",
+    lara:"Lara",
+    muratpasa:"Muratpaşa",
+    kepez:"Kepez"
+  };
+
+  return map[raw] || decodeURIComponent(raw);
+}
+
+function areaImage(area){
+  const images = {
+    "Konyaaltı":"https://images.unsplash.com/photo-1599930113854-d6d7fd521f10?q=80&w=1600",
+    "Kaleiçi":"https://images.unsplash.com/photo-1605216663980-b0f03b6e2902?q=80&w=1600",
+    "Lara":"https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1600",
+    "Muratpaşa":"https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1600",
+    "Kepez":"https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600"
+  };
+  return images[area] || images["Konyaaltı"];
+}
+
+function priceHtml(beer){
+  const currentPrice = beer.price || beer.currentPrice || getCurrentPrice(beer);
+
+  if(beer.happyHourPrice && beer.happyHourEnd && currentPrice === beer.happyHourPrice){
+    return `
+      <div class="price-box">
+        <span class="old-price">${beer.normalPrice}₺</span>
+        <span class="new-price">${currentPrice}₺</span>
+        <span class="campaign-time">${beer.happyHourEnd}'a kadar</span>
+      </div>
+    `;
+  }
+
+  return `<b class="new-price">${currentPrice}₺</b>`;
+}
+
+function openChip(venue){
+  const info = getVenueOpenInfo ? getVenueOpenInfo(venue) : {isOpen:true,text:"● AÇIK"};
+  return `<span class="open-chip ${info.isOpen ? "open" : "closed"}">${info.text} · ${venue.hours}</span>`;
+}
+
+function renderArea(){
+  const area = getAreaFromUrl();
+  const q = (document.getElementById("areaSearch").value || "").toLocaleLowerCase("tr-TR").trim();
+  const venues = getVenuesSorted().filter(v => v.area === area);
+  const filtered = venues.filter(v => v.venue.toLocaleLowerCase("tr-TR").includes(q));
+  const allBeers = getAllBeersSorted().filter(b => b.area === area);
+  const cheapest = allBeers[0];
+
+  document.title = area + " Mekanları - BeerAntalya";
+  document.getElementById("areaHero").style.setProperty("--area-img", `url("${areaImage(area)}")`);
+  document.getElementById("areaTitle").innerHTML = area.toLocaleUpperCase("tr-TR") + "<br><span>MEKANLARI</span>";
+  document.getElementById("areaDesc").innerText = area + " bölgesindeki mekanları, güncel bira fiyatlarını ve en uygun seçenekleri keşfet.";
+  document.getElementById("venueCount").innerText = venues.length + " Mekan";
+  document.getElementById("beerCount").innerText = allBeers.length + " Bira Fiyatı";
+  document.getElementById("cheapestInfo").innerText = cheapest ? ("En Ucuz: " + cheapest.price + "₺") : "En Ucuz: -";
+  document.getElementById("listTitle").innerText = "📍 " + area + " Mekanları";
+
+  const box = document.getElementById("areaCards");
+  box.innerHTML = "";
+
+  if(filtered.length === 0){
+    box.innerHTML = '<div class="empty">Bu bölgede aramaya uygun mekan bulunamadı.</div>';
+    return;
+  }
+
+  filtered.forEach((venue, index) => {
+    const venueBeers = getAllBeersSorted().filter(b => b.venue === venue.venue);
+    const cheapestBeer = venueBeers[0];
+
+    box.innerHTML += `
+      <a class="card" href="${venue.url}">
+        ${index === 0 ? '<span class="badge">BÖLGEDE ÖNE ÇIKAN</span>' : ''}
+        <img src="${venue.cardImage || venue.image}" alt="${venue.venue}">
+        <div class="card-body">
+          <h3>${venue.venue}</h3>
+          <div class="stars">⭐⭐⭐⭐☆ (${venue.reviews || ""})</div>
+          <div class="loc">📍 ${venue.area}</div>
+          <div class="price-line">
+            <small>${cheapestBeer ? cheapestBeer.beer : "Bira"}</small>
+            ${cheapestBeer ? priceHtml(cheapestBeer) : ""}
+          </div>
+          ${openChip(venue)}
+        </div>
+      </a>
+    `;
+  });
+
+  if(window.lucide) lucide.createIcons();
+}
+
+document.getElementById("areaSearch").addEventListener("input", renderArea);
+renderArea();
+setInterval(renderArea, 60000);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1522 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BeerAntalya</title>
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #050505;
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .navbar {
+      height: 68px;
+      background: #050505;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 28px;
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 50;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+
+    .logo { font-size: 28px; font-weight: 900; }
+    .logo b { color: #f5a800; }
+
+    nav {
+      display: flex;
+      gap: 32px;
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .icon-btn {
+      width: 42px;
+      height: 42px;
+      background: transparent;
+      color: white;
+      border: none;
+    }
+
+    .instagram-btn {
+      height: 42px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid #d99b00;
+      border-radius: 8px;
+      padding: 0 14px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .instagram-btn img {
+      width: 20px;
+      height: 20px;
+    }
+
+    .lang-group {
+      display: flex;
+      border: 1px solid #d99b00;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .lang-btn {
+      height: 42px;
+      padding: 0 14px;
+      background: #050505;
+      color: white;
+      border: none;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .lang-btn.active {
+      background: #f2a900;
+      color: #111;
+    }
+
+    .hero {
+      min-height: 510px;
+      padding: 115px 40px 40px;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.92) 0%, rgba(0,0,0,.55) 42%, rgba(0,0,0,.18) 100%),
+        url("hero-bg.png") center/cover no-repeat;
+      border-bottom: 1px solid rgba(255,181,21,.25);
+    }
+
+    .hero-content { max-width: 660px; }
+
+    .hero h1 {
+      font-size: 66px;
+      line-height: .95;
+      letter-spacing: 1px;
+      font-weight: 1000;
+    }
+
+    .hero h1 span { color: #f5a800; }
+
+    .hero p {
+      margin-top: 24px;
+      color: #eee;
+      font-size: 17px;
+      line-height: 1.5;
+      max-width: 560px;
+    }
+
+    .master-search {
+      margin-top: 28px;
+      max-width: 680px;
+      position: relative;
+    }
+
+    .master-field {
+      height: 58px;
+      border: 1px solid rgba(255,181,21,.65);
+      background: rgba(0,0,0,.62);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 0 18px;
+      box-shadow: 0 0 28px rgba(255,181,21,.18);
+      color: white;
+    }
+
+    .master-field input {
+      width: 100%;
+      background: transparent;
+      border: none;
+      outline: none;
+      color: white;
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .master-field input::placeholder {
+      color: rgba(255,255,255,.65);
+    }
+
+    .master-results {
+      display: none;
+      position: absolute;
+      top: 68px;
+      left: 0;
+      right: 0;
+      background: rgba(8,8,8,.98);
+      border: 1px solid rgba(255,181,21,.45);
+      border-radius: 12px;
+      overflow: hidden;
+      z-index: 100;
+      box-shadow: 0 18px 45px rgba(0,0,0,.7);
+    }
+
+    .master-result {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      cursor: pointer;
+    }
+
+    .master-result:hover {
+      background: rgba(255,181,21,.12);
+    }
+
+    .master-result strong {
+      color: #fff;
+      font-size: 15px;
+    }
+
+    .master-result small {
+      display: block;
+      color: #aaa;
+      margin-top: 4px;
+    }
+
+    .master-price {
+      color: #f5a800;
+      font-size: 18px;
+      font-weight: 1000;
+      white-space: nowrap;
+    }
+
+    .master-empty {
+      padding: 15px;
+      color: #ccc;
+      font-weight: 700;
+    }
+
+    .borsa {
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 34px 40px 26px;
+    }
+
+    .borsa-title {
+      margin-bottom: 32px;
+      text-align: center;
+      position: relative;
+    }
+
+    .borsa-title h2 {
+      width: 100%;
+      display: inline-block;
+      padding: 18px 0;
+      border-radius: 10px;
+      background: linear-gradient(90deg, rgba(255,189,37,.15), transparent, rgba(255,189,37,.15));
+      border: 1px solid rgba(255,181,21,.7);
+      box-shadow: 0 0 35px rgba(255,181,21,.25);
+      color: #ffbd25;
+      font-size: 34px;
+      font-weight: 1000;
+      letter-spacing: 2px;
+    }
+
+    .borsa-sub {
+      margin-top: 14px;
+      font-size: 16px;
+      font-weight: 600;
+      color: #cfcfcf;
+      text-align: center;
+    }
+
+    .borsa-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .borsa-box {
+      min-width: 0;
+      background: linear-gradient(180deg, rgba(25,25,25,.96), rgba(7,7,7,.98));
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .borsa-box h3 {
+      padding: 18px 22px;
+      font-size: 20px;
+      border-bottom: 1px solid rgba(255,255,255,.1);
+    }
+
+    .borsa-box.konya h3 {
+      color: #77aaff;
+      background: rgba(35,75,130,.25);
+    }
+
+    .borsa-box.kale h3 {
+      color: #ff8750;
+      background: rgba(160,70,30,.25);
+    }
+
+    .borsa-box.lara h3 {
+      color: #c684ff;
+      background: rgba(130,50,150,.22);
+    }
+
+    .borsa-head,
+    .borsa-row {
+      display: grid;
+      grid-template-columns: 1.5fr .7fr 1fr;
+      align-items: center;
+      gap: 10px;
+      padding: 11px 26px;
+    }
+
+    .borsa-head {
+      color: #ddd;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .borsa-row {
+      border-top: 1px solid rgba(255,255,255,.08);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .borsa-row:hover {
+      background: rgba(255,181,21,.08);
+    }
+
+    .borsa-row .beer-name {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+    }
+
+    .beer-img {
+      width: 22px;
+      height: 38px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
+    .borsa-row b {
+      color: #f5a800;
+      font-size: 18px;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .borsa-head span:nth-child(2) {
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .borsa-head span:nth-child(3),
+    .borsa-row span:nth-child(3) {
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    .borsa-btn {
+      width: 52%;
+      height: 40px;
+      margin: 16px auto 18px;
+      display: block;
+      background: transparent;
+      border: 1px solid #d99b00;
+      color: #f5a800;
+      border-radius: 7px;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .container {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 34px 28px 40px;
+    }
+
+    .top-row {
+      display: grid;
+      grid-template-columns: 1fr 290px;
+      gap: 24px;
+      margin-top: 6px;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+      border-bottom: 1px solid rgba(255,181,21,.5);
+      padding-bottom: 8px;
+    }
+
+    .section-head h2 {
+      font-size: 26px;
+      font-weight: 1000;
+    }
+
+    .section-head a {
+      color: #f5a800;
+      font-weight: 900;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .card {
+      background: linear-gradient(180deg,#181818,#0d0d0d);
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .card img {
+      width: 100%;
+      height: 145px;
+      object-fit: cover;
+    }
+
+    .badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: #f5a800;
+      color: #111;
+      padding: 6px 10px;
+      border-radius: 5px;
+      font-size: 12px;
+      font-weight: 1000;
+      z-index: 2;
+    }
+
+    .card-body { padding: 13px; }
+
+    .card h3 {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .stars {
+      color: #ffbf24;
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+
+    .loc {
+      color: #bbb;
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+
+    .prices {
+      display: flex;
+      gap: 8px;
+    }
+
+    .prices span {
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 6px;
+      padding: 7px 9px;
+      color: #ddd;
+      font-size: 13px;
+    }
+
+    .prices b {
+      color: white;
+      margin-left: 4px;
+    }
+
+    .cheap-panel {
+      background: linear-gradient(180deg,#181818,#0d0d0d);
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 10px;
+      padding: 16px;
+    }
+
+    .cheap-panel h2 {
+      font-size: 22px;
+      border-bottom: 1px solid rgba(255,181,21,.5);
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+    }
+
+    .cheap-row {
+      display: grid;
+      grid-template-columns: 34px 1fr auto;
+      gap: 10px;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+
+    .cheap-row:hover {
+      background: rgba(255,181,21,.08);
+    }
+
+    .cheap-row img {
+      width: 26px;
+      height: 42px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
+    .cheap-row span {
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .cheap-row small {
+      display: block;
+      color: #aaa;
+      margin-top: 3px;
+      font-weight: 500;
+    }
+
+    .cheap-row b {
+      color: #f5a800;
+      font-size: 18px;
+    }
+
+    .full-btn,
+    .map-btn {
+      width: 100%;
+      height: 42px;
+      margin-top: 15px;
+      background: transparent;
+      color: #f5a800;
+      border: 1px solid #d99b00;
+      border-radius: 7px;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .map-section {
+      max-width: 1160px;
+      margin: 26px auto 0;
+      padding: 0 28px;
+    }
+
+    .map-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 25px;
+      font-weight: 1000;
+      border-bottom: 1px solid rgba(255,181,21,.6);
+      padding-bottom: 10px;
+      margin-bottom: 14px;
+    }
+
+    .fake-map {
+      height: 280px;
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+      border: 1px solid rgba(255,255,255,.15);
+      background:
+        linear-gradient(rgba(20,20,20,.55), rgba(20,20,20,.75)),
+        url("https://tile.openstreetmap.org/13/4782/3075.png");
+      background-size: cover;
+      filter: saturate(.75) brightness(.78);
+    }
+
+    .fake-map::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 32% 85%, rgba(0,80,110,.4), transparent 33%),
+        linear-gradient(90deg, rgba(0,0,0,.25), transparent);
+      pointer-events: none;
+    }
+
+    .map-label {
+      position: absolute;
+      z-index: 2;
+      color: rgba(255,255,255,.7);
+      font-weight: 1000;
+      font-size: 28px;
+      text-shadow: 0 3px 10px #000;
+    }
+
+    .konyaalti-label { left: 18%; top: 35%; }
+    .kaleici-label { right: 24%; top: 54%; }
+    .aqua-label { left: 45%; top: 45%; font-size: 15px; color: white; }
+    .sahil-label { left: 29%; top: 58%; font-size: 15px; color: white; }
+
+    .pin {
+      position: absolute;
+      z-index: 3;
+      width: 42px;
+      height: 42px;
+      background: #f5a800;
+      border-radius: 50% 50% 50% 0;
+      transform: rotate(-45deg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 3px solid rgba(255,255,255,.4);
+      box-shadow: 0 8px 20px rgba(0,0,0,.55);
+    }
+
+    .pin span {
+      transform: rotate(45deg);
+      color: #111;
+      font-size: 18px;
+    }
+
+    .pin1 { left: 2%; top: 18%; }
+    .pin2 { left: 32%; top: 10%; }
+    .pin3 { right: 22%; top: 9%; }
+
+    .map-btn {
+      width: 240px;
+      position: absolute;
+      right: 30px;
+      bottom: 18px;
+      z-index: 4;
+      background: rgba(0,0,0,.55);
+    }
+
+    .stats {
+      max-width: 1160px;
+      margin: 22px auto 40px;
+      padding: 25px 30px;
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 10px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background: linear-gradient(180deg,#121212,#090909);
+    }
+
+    .stat {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      border-right: 1px solid rgba(255,255,255,.12);
+    }
+
+    .stat:last-child { border-right: none; }
+
+    .stat i {
+      color: #f5a800;
+      width: 40px;
+      height: 40px;
+    }
+
+    .stat b {
+      display: block;
+      color: #f5a800;
+      font-size: 28px;
+    }
+
+    .stat span {
+      color: white;
+      font-size: 15px;
+    }
+
+    @media(max-width: 900px) {
+      nav { display: none; }
+      .navbar { padding: 0 14px; }
+      .instagram-btn { display: none; }
+      .hero { padding: 100px 20px 35px; }
+      .hero h1 { font-size: 44px; }
+      .master-search { max-width: 100%; }
+
+      .borsa {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+
+      .borsa-grid,
+      .top-row,
+      .cards,
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .stat {
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,.12);
+        padding: 15px 0;
+      }
+
+      .map-btn {
+        position: static;
+        width: 100%;
+      }
+    }
+    .price-box{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+}
+
+.old-price{
+  font-size:11px;
+  color:#bbb;
+  position:relative;
+  display:inline-block;
+}
+
+.old-price::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  top:50%;
+  height:1.5px;
+  background:#ff3b3b;
+  transform:translateY(-50%);
+}
+
+.new-price{
+  color:#f5a800;
+  font-size:22px;
+  font-weight:1000;
+  line-height:1;
+}
+
+.campaign-time{
+  font-size:10px;
+  color:#32d26a;
+  font-weight:900;
+}
+  
+/* BA FINAL: En ucuz biralar tüm liste */
+.cheap-panel{
+  max-height: 760px;
+  overflow-y: auto;
+}
+
+.cheap-panel::-webkit-scrollbar{
+  width: 7px;
+}
+
+.cheap-panel::-webkit-scrollbar-thumb{
+  background: rgba(255,181,21,.55);
+  border-radius: 20px;
+}
+
+.cheap-row .price-box{
+  align-items:flex-end;
+}
+
+.borsa-btn-link{
+  width:52%;
+  height:40px;
+  margin:16px auto 18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:transparent;
+  border:1px solid #d99b00;
+  color:#f5a800;
+  border-radius:7px;
+  font-weight:900;
+  cursor:pointer;
+}
+
+
+/* BA UPDATE: En ucuz bira paneli popüler mekanlarla aynı hizada bitsin */
+.top-row{
+  align-items: stretch;
+}
+
+.cheap-panel{
+  height: 100%;
+  max-height: none !important;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.cheap-panel .full-btn{
+  margin-top: auto;
+}
+
+@media(max-width:900px){
+  .cheap-panel{
+    height: auto;
+    max-height: 760px !important;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="logo">🍺 Beer<b>Antalya</b></div>
+
+  <nav>
+    <a href="#mekanlar">Mekanlar</a>
+    <a href="#fiyatlar">Bira Fiyatları</a>
+    <a href="#harita">Harita</a>
+    <a href="#">Blog</a>
+    <a href="#">Etkinlikler</a>
+  </nav>
+
+  <div class="nav-actions">
+    <button class="icon-btn"><i data-lucide="search"></i></button>
+
+    <a class="instagram-btn" href="https://instagram.com/beerantalya" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+      instagram.com/beerantalya
+    </a>
+
+    <div class="lang-group">
+      <button type="button" class="lang-btn active" data-lang="tr">TR</button>
+      <button type="button" class="lang-btn" data-lang="en">EN</button>
+      <button type="button" class="lang-btn" data-lang="ru">RU</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>
+      ANTALYA’NIN <br>
+      EN GÜNCEL <br>
+      <span>BİRA REHBERİ</span>
+    </h1>
+
+    <p>
+      Antalya’daki mekanları keşfet, güncel bira fiyatlarını karşılaştır, yorumları oku ve sana en uygun mekanı bul!
+    </p>
+
+    <div class="master-search">
+      <div class="master-field">
+        <i data-lucide="search"></i>
+        <input id="masterSearchInput" placeholder="Mekan veya bira ara... Örn: Efes, Tuborg, Gas Light">
+      </div>
+      <div class="master-results" id="masterResults"></div>
+    </div>
+  </div>
+</section>
+
+<section class="borsa">
+  <div class="borsa-title">
+    <h2>📈 ANTALYA BİRA BORSASI</h2>
+    <p class="borsa-sub">
+      Antalya’nın en ucuz bira noktalarını anında gör, fiyatları karşılaştır ve direkt mekana git.
+    </p>
+  </div>
+
+  <div class="borsa-grid">
+    <div class="borsa-box konya">
+      <h3>📍 KONYAALTI</h3>
+      <div class="borsa-head"><span>Bira</span><span>En Ucuz Fiyat</span><span>Mekan</span></div>
+    </div>
+
+    <div class="borsa-box kale">
+      <h3>📍 KALEİÇİ</h3>
+      <div class="borsa-head"><span>Bira</span><span>En Ucuz Fiyat</span><span>Mekan</span></div>
+    </div>
+
+    <div class="borsa-box lara">
+      <h3>📍 LARA</h3>
+      <div class="borsa-head"><span>Bira</span><span>En Ucuz Fiyat</span><span>Mekan</span></div>
+    </div>
+  </div>
+</section>
+
+<main class="container">
+  <div class="top-row">
+    <section id="mekanlar">
+      <div class="section-head">
+        <h2>🍺 POPÜLER MEKANLAR</h2>
+      </div>
+
+      <div class="cards" id="venueCards"></div>
+    </section>
+
+    <aside class="cheap-panel" id="fiyatlar"></aside>
+  </div>
+</main>
+
+<section class="map-section" id="harita">
+  <div class="map-title">📍 YAKINDAKİ MEKANLAR</div>
+
+  <div class="fake-map">
+    <div class="pin pin1"><span>🍺</span></div>
+    <div class="pin pin2"><span>🍺</span></div>
+    <div class="pin pin3"><span>🍺</span></div>
+
+    <span class="map-label konyaalti-label">KONYAALTI</span>
+    <span class="map-label kaleici-label">KALEİÇİ</span>
+    <span class="map-label sahil-label">Konyaaltı<br>Sahili</span>
+    <span class="map-label aqua-label">Antalya<br>Aquarium</span>
+
+    <button class="map-btn">Haritada Görüntüle →</button>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="stat"><i data-lucide="building-2"></i><div><b>250+</b><span>Mekan</span></div></div>
+  <div class="stat"><i data-lucide="beer"></i><div><b>120+</b><span>Bira Çeşidi</span></div></div>
+  <div class="stat"><i data-lucide="users"></i><div><b>5.000+</b><span>Kullanıcı</span></div></div>
+  <div class="stat"><i data-lucide="message-square"></i><div><b>3.000+</b><span>Yorum</span></div></div>
+</section>
+<script src="data.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const LANG = {
+    tr: {
+      nav: ["Mekanlar", "Bira Fiyatları", "Harita", "Blog", "Etkinlikler"],
+      title: "ANTALYA’NIN <br> EN GÜNCEL <br> <span>BİRA REHBERİ</span>",
+      desc: "Antalya’daki mekanları keşfet, güncel bira fiyatlarını karşılaştır, yorumları oku ve sana en uygun mekanı bul!",
+      search: "Mekan veya bira ara... Örn: Efes, Tuborg, Gas Light",
+      borsa: "📈 ANTALYA BİRA BORSASI",
+      borsaSub: "Antalya’nın en ucuz bira noktalarını anında gör, fiyatları karşılaştır ve direkt mekana git.",
+      borsaHead: ["Bira", "En Ucuz Fiyat", "Mekan"],
+      popular: "🍺 POPÜLER MEKANLAR",
+      cheap: "🍺 EN UCUZ BİRALAR",
+      nearby: "📍 YAKINDAKİ MEKANLAR",
+      seeAll: "Tümünü Gör →",
+      mapBtn: "Haritada Görüntüle →",
+      stats: ["Mekan", "Bira Çeşidi", "Kullanıcı", "Yorum"],
+      venueGo: "Mekan sayfasına git",
+      go: "Git →",
+      cheapest: "En ucuz",
+      noResult: "Sonuç bulunamadı"
+    },
+    en: {
+      nav: ["Places", "Beer Prices", "Map", "Blog", "Events"],
+      title: "ANTALYA’S <br> MOST UPDATED <br> <span>BEER GUIDE</span>",
+      desc: "Discover venues in Antalya, compare beer prices, read reviews and find the best place for you!",
+      search: "Search place or beer... Ex: Efes, Tuborg, Gas Light",
+      borsa: "📈 ANTALYA BEER MARKET",
+      borsaSub: "See Antalya’s cheapest beer spots instantly, compare prices and go directly to the venue.",
+      borsaHead: ["Beer", "Cheapest Price", "Place"],
+      popular: "🍺 POPULAR PLACES",
+      cheap: "🍺 CHEAPEST BEERS",
+      nearby: "📍 NEARBY PLACES",
+      seeAll: "See All →",
+      mapBtn: "View on Map →",
+      stats: ["Places", "Beer Types", "Users", "Reviews"],
+      venueGo: "Go to venue page",
+      go: "Go →",
+      cheapest: "Cheapest",
+      noResult: "No results found"
+    },
+    ru: {
+      nav: ["Заведения", "Цены на пиво", "Карта", "Блог", "События"],
+      title: "САМЫЙ АКТУАЛЬНЫЙ <br> ПИВНОЙ ГИД <br> <span>АНТАЛИИ</span>",
+      desc: "Откройте заведения Анталии, сравните цены на пиво, читайте отзывы и найдите лучшее место!",
+      search: "Поиск заведения или пива... Efes, Tuborg, Gas Light",
+      borsa: "📈 ПИВНАЯ БИРЖА АНТАЛИИ",
+      borsaSub: "Смотрите самые дешевые пивные места Анталии и переходите к заведению.",
+      borsaHead: ["Пиво", "Лучшая цена", "Заведение"],
+      popular: "🍺 ПОПУЛЯРНЫЕ ЗАВЕДЕНИЯ",
+      cheap: "🍺 САМОЕ ДЕШЕВОЕ ПИВО",
+      nearby: "📍 БЛИЖАЙШИЕ ЗАВЕДЕНИЯ",
+      seeAll: "Смотреть все →",
+      mapBtn: "Показать на карте →",
+      stats: ["Заведения", "Виды пива", "Пользователи", "Отзывы"],
+      venueGo: "Перейти на страницу",
+      go: "Перейти →",
+      cheapest: "Самое дешевое",
+      noResult: "Ничего не найдено"
+    }
+  };
+
+  let currentLang = localStorage.getItem("beerLang") || "tr";
+
+  function safeVenues() {
+    if (typeof getVenuesSorted === "function") return getVenuesSorted();
+    return typeof venuesData !== "undefined" ? venuesData : [];
+  }
+
+  function safeBeers() {
+    if (typeof getAllBeersSorted === "function") return getAllBeersSorted();
+    return [];
+  }
+
+  function getPriceLabel(item){
+    const currentPrice = item.price || item.currentPrice || item.normalPrice || 0;
+
+    if(item.happyHourPrice && item.happyHourEnd && currentPrice === item.happyHourPrice){
+      return `
+        <div class="price-box">
+          <span class="old-price">${item.normalPrice}₺</span>
+          <span class="new-price">${currentPrice}₺</span>
+          <span class="campaign-time">${item.happyHourEnd}'a kadar</span>
+        </div>
+      `;
+    }
+
+    return `<b class="new-price">${currentPrice}₺</b>`;
+  }
+
+  function renderBorsa() {
+    const t = LANG[currentLang];
+    document.querySelectorAll(".borsa-box").forEach(box => {
+      const area = box.classList.contains("konya") ? "Konyaaltı" : box.classList.contains("kale") ? "Kaleiçi" : "Lara";
+      const titleEl = box.querySelector("h3");
+      const title = titleEl ? titleEl.outerHTML : "";
+
+      box.innerHTML = title + `<div class="borsa-head"><span>${t.borsaHead[0]}</span><span>${t.borsaHead[1]}</span><span>${t.borsaHead[2]}</span></div>`;
+
+      safeBeers().filter(item => item.area === area).slice(0, 4).forEach(item => {
+        box.innerHTML += `
+          <a class="borsa-row" href="${item.url}">
+            <span class="beer-name"><img class="beer-img" src="${item.image}" alt="${item.beer}">${item.beer}</span>
+            ${getPriceLabel(item)}
+            <span>${item.venue}</span>
+          </a>
+        `;
+      });
+
+      box.innerHTML += `<button class="borsa-btn">${t.seeAll}</button>`;
+    });
+  }
+
+  function renderCheapPanel() {
+    const panel = document.getElementById("fiyatlar");
+    if (!panel) return;
+    const t = LANG[currentLang];
+
+    panel.innerHTML = `<h2>${t.cheap}</h2>`;
+
+    safeBeers().slice(0, 4).forEach(item => {
+      panel.innerHTML += `
+        <a class="cheap-row" href="${item.url}">
+          <img src="${item.image}" alt="${item.beer}">
+          <span>${item.beer}<small>${item.venue}</small></span>
+          ${getPriceLabel(item)}
+        </a>
+      `;
+    });
+
+    panel.innerHTML += `<button class="full-btn">${t.seeAll}</button>`;
+  }
+
+  function renderCards() {
+    const box = document.getElementById("venueCards");
+    if (!box) return;
+    const t = LANG[currentLang];
+    box.innerHTML = "";
+
+    safeVenues().forEach((venue, index) => {
+      box.innerHTML += `
+        <a class="card" href="${venue.url}">
+          ${index === 0 ? '<span class="badge">ÖNE ÇIKAN</span>' : ''}
+          <img src="${venue.cardImage || venue.image}" alt="${venue.venue}">
+          <div class="card-body">
+            <h3>${venue.venue}</h3>
+            <div class="stars">⭐⭐⭐⭐☆</div>
+            <div class="loc">📍 ${venue.area}</div>
+            <div class="prices"><span>${t.cheapest} <b>${venue.minPrice} ₺</b></span></div>
+          </div>
+        </a>
+      `;
+    });
+  }
+
+  function renderSearchResults(query) {
+    const results = document.getElementById("masterResults");
+    if (!results) return;
+    const t = LANG[currentLang];
+    const q = query.toLocaleLowerCase("tr-TR").trim();
+    results.innerHTML = "";
+
+    if (q.length < 2) {
+      results.style.display = "none";
+      return;
+    }
+
+    const found = [];
+
+    safeVenues().forEach(place => {
+      if (
+        place.venue.toLocaleLowerCase("tr-TR").includes(q) ||
+        place.area.toLocaleLowerCase("tr-TR").includes(q)
+      ) {
+        found.push({
+          type: "venue",
+          title: place.venue,
+          sub: "📍 " + place.area + " · " + t.venueGo,
+          url: place.url
+        });
+      }
+    });
+
+    safeBeers().forEach(item => {
+      const searchText = `${item.beer} ${item.name} ${item.size} ${item.venue} ${item.area}`.toLocaleLowerCase("tr-TR");
+      if (searchText.includes(q)) {
+        found.push({
+          ...item,
+          type: "beer",
+          title: item.beer,
+          sub: item.venue + " · " + item.area
+        });
+      }
+    });
+
+    found.sort((a, b) => {
+      if (a.type === "beer" && b.type === "beer") return a.price - b.price;
+      if (a.type === "beer" && b.type !== "beer") return -1;
+      if (a.type !== "beer" && b.type === "beer") return 1;
+      return 0;
+    });
+
+    if (found.length === 0) {
+      results.innerHTML = `<div class="master-empty">${t.noResult}</div>`;
+      results.style.display = "block";
+      return;
+    }
+
+    found.forEach(item => {
+      const div = document.createElement("div");
+      div.className = "master-result";
+      div.innerHTML = `
+        <div>
+          <strong>${item.type === "beer" ? "🍺 " : "📍 "}${item.title}</strong>
+          <small>${item.sub}</small>
+        </div>
+        <div class="master-price">${item.type === "beer" ? getPriceLabel(item) : t.go}</div>
+      `;
+      div.addEventListener("click", function () {
+        window.location.href = item.url;
+      });
+      results.appendChild(div);
+    });
+
+    results.style.display = "block";
+  }
+
+  function initSearch() {
+    const input = document.getElementById("masterSearchInput");
+    if (!input) return;
+
+    input.addEventListener("input", function () {
+      renderSearchResults(this.value);
+    });
+
+    document.addEventListener("click", function (event) {
+      if (!event.target.closest(".master-search")) {
+        const results = document.getElementById("masterResults");
+        if (results) results.style.display = "none";
+      }
+    });
+  }
+
+  function setLang(lang) {
+    currentLang = lang;
+    localStorage.setItem("beerLang", lang);
+    const t = LANG[lang];
+
+    document.querySelectorAll("nav a").forEach((a, index) => {
+      if (t.nav[index]) a.textContent = t.nav[index];
+    });
+
+    const heroTitle = document.querySelector(".hero h1");
+    if (heroTitle) heroTitle.innerHTML = t.title;
+
+    const heroDesc = document.querySelector(".hero p");
+    if (heroDesc) heroDesc.textContent = t.desc;
+
+    const input = document.getElementById("masterSearchInput");
+    if (input) input.placeholder = t.search;
+
+    const borsaTitle = document.querySelector(".borsa-title h2");
+    if (borsaTitle) borsaTitle.textContent = t.borsa;
+
+    const borsaSub = document.querySelector(".borsa-sub");
+    if (borsaSub) borsaSub.textContent = t.borsaSub;
+
+    const popular = document.querySelector("#mekanlar .section-head h2");
+    if (popular) popular.textContent = t.popular;
+
+    const mapTitle = document.querySelector(".map-title");
+    if (mapTitle) mapTitle.textContent = t.nearby;
+
+    const mapBtn = document.querySelector(".map-btn");
+    if (mapBtn) mapBtn.textContent = t.mapBtn;
+
+    document.querySelectorAll(".stat span").forEach((span, index) => {
+      if (t.stats[index]) span.textContent = t.stats[index];
+    });
+
+    document.querySelectorAll(".lang-btn").forEach(button => {
+      button.classList.toggle("active", button.dataset.lang === lang);
+    });
+
+    renderBorsa();
+    renderCheapPanel();
+    renderCards();
+
+    const searchInput = document.getElementById("masterSearchInput");
+    if (searchInput && searchInput.value.trim().length >= 2) {
+      renderSearchResults(searchInput.value);
+    }
+
+    if (window.lucide) lucide.createIcons();
+  }
+
+  document.querySelectorAll(".lang-btn").forEach(button => {
+    button.addEventListener("click", function () {
+      setLang(this.dataset.lang);
+    });
+  });
+
+  initSearch();
+  setLang(currentLang);
+
+  setInterval(function(){
+    renderBorsa();
+    renderCheapPanel();
+    renderCards();
+    const searchInput = document.getElementById("masterSearchInput");
+    if (searchInput && searchInput.value.trim().length >= 2) {
+      renderSearchResults(searchInput.value);
+    }
+  }, 60000);
+
+  if (window.lucide) lucide.createIcons();
+});
+</script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  function priceHtml(item){
+    const currentPrice = item.price || item.currentPrice || item.normalPrice || getCurrentPrice(item);
+
+    if(item.happyHourPrice && item.happyHourEnd && currentPrice === item.happyHourPrice){
+      return `
+        <div class="price-box">
+          <span class="old-price">${item.normalPrice}₺</span>
+          <span class="new-price">${currentPrice}₺</span>
+          <span class="campaign-time">${item.happyHourEnd}'a kadar</span>
+        </div>
+      `;
+    }
+
+    return `<b class="new-price">${currentPrice}₺</b>`;
+  }
+
+  window.BA_priceHtml = priceHtml;
+
+  function getLangText(){
+    const lang = localStorage.getItem("beerLang") || "tr";
+    const dict = {
+      tr: { cheap:"🍺 EN UCUZ BİRALAR", seeAll:"Tümünü Gör →", cheapest:"En ucuz", venueGo:"Mekan sayfasına git", go:"Git →", noResult:"Sonuç bulunamadı", borsaHead:["Bira","En Ucuz Fiyat","Mekan"] },
+      en: { cheap:"🍺 CHEAPEST BEERS", seeAll:"See All →", cheapest:"Cheapest", venueGo:"Go to venue page", go:"Go →", noResult:"No results found", borsaHead:["Beer","Cheapest Price","Place"] },
+      ru: { cheap:"🍺 САМОЕ ДЕШЕВОЕ ПИВО", seeAll:"Смотреть все →", cheapest:"Самое дешевое", venueGo:"Перейти на страницу", go:"Перейти →", noResult:"Ничего не найдено", borsaHead:["Пиво","Лучшая цена","Заведение"] }
+    };
+    return dict[lang] || dict.tr;
+  }
+
+  function renderBorsaFixed(){
+    if(typeof getAllBeersSorted !== "function") return;
+    const t = getLangText();
+    document.querySelectorAll(".borsa-box").forEach(box => {
+      const area = box.classList.contains("konya") ? "Konyaaltı" : box.classList.contains("kale") ? "Kaleiçi" : "Lara";
+      const titleEl = box.querySelector("h3");
+      const title = titleEl ? titleEl.outerHTML : "";
+
+      box.innerHTML = title + `<div class="borsa-head"><span>${t.borsaHead[0]}</span><span>${t.borsaHead[1]}</span><span>${t.borsaHead[2]}</span></div>`;
+
+      getAllBeersSorted().filter(item => item.area === area).slice(0, 4).forEach(item => {
+        box.innerHTML += `
+          <a class="borsa-row" href="${item.url}">
+            <span class="beer-name"><img class="beer-img" src="${item.image}" alt="${item.beer}">${item.beer}</span>
+            ${priceHtml(item)}
+            <span>${item.venue}</span>
+          </a>
+        `;
+      });
+
+      box.innerHTML += `<button class="borsa-btn">${t.seeAll}</button>`;
+    });
+  }
+
+  function renderCheapPanelFixed(){
+    if(typeof getAllBeersSorted !== "function") return;
+    const panel = document.getElementById("fiyatlar");
+    if(!panel) return;
+    const t = getLangText();
+
+    panel.innerHTML = `<h2>${t.cheap}</h2>`;
+
+    getAllBeersSorted().slice(0, 25).forEach(item => {
+      panel.innerHTML += `
+        <a class="cheap-row" href="${item.url}">
+          <img src="${item.image}" alt="${item.beer}">
+          <span>${item.beer}<small>${item.venue}</small></span>
+          ${priceHtml(item)}
+        </a>
+      `;
+    });
+
+    panel.innerHTML += `<button class="full-btn">${t.seeAll}</button>`;
+  }
+
+  function renderCardsFixed(){
+    if(typeof getVenuesSorted !== "function") return;
+    const box = document.getElementById("venueCards");
+    if(!box) return;
+    const t = getLangText();
+    box.innerHTML = "";
+
+    getVenuesSorted().slice(0, 20).forEach((venue, index) => {
+      box.innerHTML += `
+        <a class="card" href="${venue.url}">
+          ${index === 0 ? '<span class="badge">ÖNE ÇIKAN</span>' : ''}
+          <img src="${venue.cardImage || venue.image}" alt="${venue.venue}">
+          <div class="card-body">
+            <h3>${venue.venue}</h3>
+            <div class="stars">⭐⭐⭐⭐☆ (${venue.reviews || ""})</div>
+            <div class="loc">📍 ${venue.area}</div>
+            <div class="prices"><span>${t.cheapest} <b>${venue.minPrice} ₺</b></span></div>
+          </div>
+        </a>
+      `;
+    });
+  }
+
+  function renderSearchResultsFixed(query){
+    const results = document.getElementById("masterResults");
+    if(!results || typeof getVenuesSorted !== "function" || typeof getAllBeersSorted !== "function") return;
+
+    const t = getLangText();
+    const q = String(query || "").toLocaleLowerCase("tr-TR").trim();
+    results.innerHTML = "";
+
+    if(q.length < 2){
+      results.style.display = "none";
+      return;
+    }
+
+    const found = [];
+
+    // Mekan araması: karşısında fiyat yok, sadece mekan görünsün
+    getVenuesSorted().forEach(place => {
+      const venueText = `${place.venue} ${place.area}`.toLocaleLowerCase("tr-TR");
+      if(venueText.includes(q)){
+        found.push({
+          type:"venue",
+          title: place.venue,
+          sub: "📍 " + place.area + " · " + t.venueGo,
+          url: place.url
+        });
+      }
+    });
+
+    // Bira araması: fiyat görünür
+    getAllBeersSorted().slice(0, 25).forEach(item => {
+      const beerText = `${item.beer} ${item.name} ${item.size}`.toLocaleLowerCase("tr-TR");
+      if(beerText.includes(q)){
+        found.push({
+          ...item,
+          type:"beer",
+          title:item.beer,
+          sub:item.venue + " · " + item.area
+        });
+      }
+    });
+
+    found.sort((a,b) => {
+      if(a.type === "venue" && b.type === "venue") return a.title.localeCompare(b.title, "tr");
+      if(a.type === "venue" && b.type === "beer") return -1;
+      if(a.type === "beer" && b.type === "venue") return 1;
+      return (a.price || 999999) - (b.price || 999999);
+    });
+
+    if(found.length === 0){
+      results.innerHTML = `<div class="master-empty">${t.noResult}</div>`;
+      results.style.display = "block";
+      return;
+    }
+
+    found.forEach(item => {
+      const div = document.createElement("div");
+      div.className = "master-result";
+      div.innerHTML = `
+        <div>
+          <strong>${item.type === "beer" ? "🍺 " : "📍 "}${item.title}</strong>
+          <small>${item.sub}</small>
+        </div>
+        <div class="master-price">${item.type === "beer" ? priceHtml(item) : t.go}</div>
+      `;
+      div.addEventListener("click", () => window.location.href = item.url);
+      results.appendChild(div);
+    });
+
+    results.style.display = "block";
+  }
+
+  const input = document.getElementById("masterSearchInput");
+  if(input){
+    input.oninput = function(){ renderSearchResultsFixed(this.value); };
+  }
+
+  function refreshBA(){
+    renderBorsaFixed();
+    renderCheapPanelFixed();
+    renderCardsFixed();
+    const input = document.getElementById("masterSearchInput");
+    if(input && input.value.trim().length >= 2) renderSearchResultsFixed(input.value);
+    if(window.lucide) lucide.createIcons();
+  }
+
+  window.BA_refresh = refreshBA;
+  refreshBA();
+  setInterval(refreshBA, 60000);
+
+  document.querySelectorAll(".lang-btn").forEach(btn => {
+    btn.addEventListener("click", function(){
+      setTimeout(refreshBA, 50);
+    });
+  });
+});
+</script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  function BA_finalText(){
+    const lang = localStorage.getItem("beerLang") || "tr";
+    const dict = {
+      tr: { cheap:"🍺 EN UCUZ BİRALAR", seeAll:"Tümünü Gör →", borsaHead:["Bira","En Ucuz Fiyat","Mekan"] },
+      en: { cheap:"🍺 CHEAPEST BEERS", seeAll:"See All →", borsaHead:["Beer","Cheapest Price","Place"] },
+      ru: { cheap:"🍺 САМОЕ ДЕШЕВОЕ ПИВО", seeAll:"Смотреть все →", borsaHead:["Пиво","Лучшая цена","Заведение"] }
+    };
+    return dict[lang] || dict.tr;
+  }
+
+  function BA_finalAreaSlug(area){
+    const map = {
+      "Konyaaltı":"konyaalti",
+      "Kaleiçi":"kaleici",
+      "Lara":"lara",
+      "Muratpaşa":"muratpasa",
+      "Kepez":"kepez"
+    };
+    return map[area] || encodeURIComponent(area);
+  }
+
+  function BA_finalPriceHtml(item){
+    if(window.BA_priceHtml) return window.BA_priceHtml(item);
+
+    const currentPrice = item.price || item.currentPrice || item.normalPrice || (typeof getCurrentPrice === "function" ? getCurrentPrice(item) : "");
+    if(item.happyHourPrice && item.happyHourEnd && currentPrice === item.happyHourPrice){
+      return `
+        <div class="price-box">
+          <span class="old-price">${item.normalPrice}₺</span>
+          <span class="new-price">${currentPrice}₺</span>
+          <span class="campaign-time">${item.happyHourEnd}'a kadar</span>
+        </div>
+      `;
+    }
+    return `<b class="new-price">${currentPrice}₺</b>`;
+  }
+
+  function BA_renderCheapPanelAll(){
+    if(typeof getAllBeersSorted !== "function") return;
+    const panel = document.getElementById("fiyatlar");
+    if(!panel) return;
+    const t = BA_finalText();
+
+    panel.innerHTML = `<h2>${t.cheap}</h2>`;
+
+    getAllBeersSorted().slice(0, 25).forEach(item => {
+      panel.innerHTML += `
+        <a class="cheap-row" href="${item.url}">
+          <img src="${item.image}" alt="${item.beer}">
+          <span>${item.beer}<small>${item.venue} · ${item.area}</small></span>
+          ${BA_finalPriceHtml(item)}
+        </a>
+      `;
+    });
+  }
+
+  function BA_renderBorsaWithAreaLinks(){
+    if(typeof getAllBeersSorted !== "function") return;
+    const t = BA_finalText();
+
+    document.querySelectorAll(".borsa-box").forEach(box => {
+      const area = box.classList.contains("konya") ? "Konyaaltı" : box.classList.contains("kale") ? "Kaleiçi" : "Lara";
+      const titleEl = box.querySelector("h3");
+      const title = titleEl ? titleEl.outerHTML : `<h3>📍 ${area.toUpperCase()}</h3>`;
+
+      box.innerHTML = title + `<div class="borsa-head"><span>${t.borsaHead[0]}</span><span>${t.borsaHead[1]}</span><span>${t.borsaHead[2]}</span></div>`;
+
+      getAllBeersSorted().filter(item => item.area === area).slice(0, 4).forEach(item => {
+        box.innerHTML += `
+          <a class="borsa-row" href="${item.url}">
+            <span class="beer-name"><img class="beer-img" src="${item.image}" alt="${item.beer}">${item.beer}</span>
+            ${BA_finalPriceHtml(item)}
+            <span>${item.venue}</span>
+          </a>
+        `;
+      });
+
+      box.innerHTML += `<a class="borsa-btn-link" href="bolge.html?area=${BA_finalAreaSlug(area)}">${t.seeAll}</a>`;
+    });
+  }
+
+  function BA_finalRefresh(){
+    BA_renderCheapPanelAll();
+    BA_renderBorsaWithAreaLinks();
+    if(window.lucide) lucide.createIcons();
+  }
+
+  window.BA_renderCheapPanelAll = BA_renderCheapPanelAll;
+  window.BA_renderBorsaWithAreaLinks = BA_renderBorsaWithAreaLinks;
+
+  BA_finalRefresh();
+  setInterval(BA_finalRefresh, 60000);
+
+  document.querySelectorAll(".lang-btn").forEach(btn => {
+    btn.addEventListener("click", function(){
+      setTimeout(BA_finalRefresh, 80);
+    });
+  });
+});
+</script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+  function BA_limitPopularTo20(){
+    const cardsBox = document.getElementById("venueCards");
+    if(!cardsBox) return;
+
+    const cards = cardsBox.querySelectorAll(".card");
+    cards.forEach((card, index) => {
+      card.style.display = index < 20 ? "" : "none";
+    });
+  }
+
+  BA_limitPopularTo20();
+  setInterval(BA_limitPopularTo20, 1000);
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BeerAntalya Mekan</title>
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#070707;color:white;font-family:Arial,sans-serif}
+a{text-decoration:none;color:inherit}
+.page{max-width:1220px;margin:auto;padding:22px}
+
+.hero{min-height:470px;border:1px solid rgba(255,255,255,.18);border-radius:18px;overflow:hidden;position:relative;background:linear-gradient(90deg,rgba(0,0,0,.85),rgba(0,0,0,.45)),var(--hero-img) center/cover;padding:34px}
+.back{color:#f5b21b;font-weight:800;display:inline-flex;gap:8px;align-items:center}
+.favorite{position:absolute;top:25px;right:25px;width:52px;height:52px;border-radius:50%;border:1px solid #777;background:rgba(0,0,0,.45);color:white}
+.hero-info{position:absolute;left:34px;bottom:34px;max-width:560px}
+.area{display:inline-flex;gap:6px;align-items:center;border:1px solid rgba(255,255,255,.25);padding:8px 13px;border-radius:20px;background:rgba(0,0,0,.5)}
+.hero h1{font-size:58px;margin:25px 0 10px;font-family:Georgia,serif}
+.stars{color:#ffb515;font-size:20px;margin-bottom:14px}
+.desc{font-size:17px;line-height:1.5;color:#eee}
+.buttons{display:flex;gap:14px;margin-top:28px}
+.gold-btn,.dark-btn{height:52px;padding:0 24px;border-radius:9px;font-weight:900;border:none;display:flex;align-items:center;gap:8px;cursor:pointer}
+.gold-btn{background:linear-gradient(135deg,#ffbf24,#d99000);color:#111}
+.dark-btn{background:rgba(0,0,0,.5);color:white;border:1px solid rgba(255,255,255,.25)}
+
+.open-card{position:absolute;right:25px;bottom:22px;background:rgba(18,18,18,.9);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:20px 25px;min-width:230px}
+.open-card b{color:#32d26a}
+.open-card p{margin:10px 0 0;color:white;font-size:17px;font-weight:800}
+.open-blink{color:#32d26a!important;animation:blinkOpen 1s infinite}
+@keyframes blinkOpen{0%,100%{opacity:1}50%{opacity:.25}}
+
+.info-grid{margin-top:18px;border:1px solid rgba(255,255,255,.15);border-radius:15px;background:linear-gradient(180deg,#171717,#0d0d0d);display:grid;grid-template-columns:repeat(4,1fr);overflow:hidden}
+.info-card{padding:28px;border-right:1px solid rgba(255,255,255,.14);display:flex;gap:18px;align-items:center;position:relative;overflow:hidden;min-height:155px;background-size:cover!important;background-position:center!important}
+.info-card:last-child{border-right:0}
+.info-card::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.78),rgba(0,0,0,.42));z-index:0}
+.info-card::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 85% 18%,rgba(255,181,21,.28),transparent 36%);z-index:0}
+.info-card i{color:#f5b21b;width:38px;height:38px;position:relative;z-index:1;filter:drop-shadow(0 3px 8px #000)}
+.info-card div{position:relative;z-index:1}
+.info-card small{color:#f5b21b;font-weight:900;text-shadow:0 3px 10px #000}
+.info-card h3{font-size:22px;margin:8px 0 5px;text-shadow:0 3px 10px #000}
+.info-card p{color:#eee;text-shadow:0 3px 10px #000}
+
+.price-box{display:flex;flex-direction:column;align-items:flex-end;line-height:1.05}
+.old-price{font-size:11px;color:#bbb;position:relative;display:inline-block}
+.old-price::after{content:"";position:absolute;left:0;right:0;top:50%;height:1.5px;background:#ff3b3b;transform:translateY(-50%)}
+.new-price{color:#f5a800;font-size:22px;font-weight:1000;line-height:1}
+.campaign-time{font-size:10px;color:#32d26a;font-weight:900;margin-top:2px;white-space:nowrap}
+
+.section{margin-top:18px;border:1px solid rgba(255,255,255,.15);border-radius:15px;background:linear-gradient(180deg,#151515,#0b0b0b);padding:26px}
+.section-title{font-size:24px;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.section-title i{color:#f5b21b}
+
+.menu-tabs{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px}
+.beer-tab{height:82px;border-radius:13px;border:1px solid rgba(255,181,21,.45);color:white;overflow:hidden;position:relative;display:flex;align-items:center;gap:16px;padding:0 20px;text-align:left;background-size:cover!important;background-position:center!important;box-shadow:inset 0 0 0 1px rgba(255,255,255,.04);cursor:default}
+.beer-tab::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.88),rgba(0,0,0,.55),rgba(0,0,0,.20));z-index:0}
+.beer-tab > span{position:relative;z-index:1}
+.draft-tab{background:linear-gradient(90deg,rgba(0,0,0,.75),rgba(0,0,0,.25)),url("https://images.unsplash.com/photo-1608270586620-248524c67de9?q=80&w=900")}
+.bottle-tab{background:linear-gradient(90deg,rgba(0,0,0,.75),rgba(0,0,0,.25)),url("https://images.unsplash.com/photo-1618885472179-5e474019f2a9?q=80&w=900")}
+.tab-icon{width:48px;height:48px;min-width:48px;border:1px solid rgba(255,181,21,.65);border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.42);font-size:23px}
+.tab-text strong{display:block;font-size:22px;letter-spacing:1px;font-weight:1000}
+.tab-text small{display:block;margin-top:5px;color:#f5b21b;font-size:14px;font-weight:800}
+
+.menu-wrapper{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.menu-box{border:1px solid rgba(255,181,21,.4);border-radius:10px;padding:20px 28px;position:relative;min-height:305px;display:block}
+.menu-row{display:grid;grid-template-columns:1fr auto auto;gap:12px;align-items:center;padding:11px 0;border-bottom:1px dashed rgba(255,255,255,.12)}
+.menu-row:last-child{border-bottom:0}
+.menu-row h4{font-size:19px}
+.menu-row small{display:block;color:#bbb;margin-top:3px}
+.menu-row b{font-size:22px}
+.cheapest{color:#ffcc2d;border:1px solid #ffcc2d;padding:5px 11px;border-radius:20px;font-size:12px;font-weight:900}
+.note{color:#aaa;margin-top:18px;border-top:1px solid rgba(255,255,255,.1);padding-top:14px}
+
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.photo img{width:100%;height:180px;object-fit:cover;border-radius:10px}
+.photo p{text-align:center;margin-top:9px;color:#eee}
+
+@media(max-width:900px){
+  .hero{min-height:620px}
+  .hero-info{position:relative;left:auto;bottom:auto;margin-top:70px}
+  .open-card{position:relative;right:auto;bottom:auto;margin-top:25px}
+  .hero h1{font-size:42px}
+  .info-grid,.menu-wrapper,.gallery,.menu-tabs{grid-template-columns:1fr}
+  .info-card{border-right:0;border-bottom:1px solid rgba(255,255,255,.12)}
+}
+
+.closed-blink{
+  color:#ff3b3b!important;
+  font-weight:900;
+  animation:blinkClosed 1s infinite;
+}
+@keyframes blinkClosed{
+  0%,100%{opacity:1}
+  50%{opacity:.35}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="page">
+  <section class="hero" id="hero">
+    <a class="back" href="index.html"><i data-lucide="arrow-left"></i> Geri Dön</a>
+    <button class="favorite"><i data-lucide="heart"></i></button>
+
+    <div class="hero-info">
+      <div class="area" id="area">📍 Kaleiçi</div>
+      <h1 id="venueName">Gas Light Pub</h1>
+      <div class="stars" id="stars">★★★★★ <span style="color:white;font-size:16px">4.6 (428 yorum)</span></div>
+      <p class="desc" id="desc">Kaleiçi’nin en eski ve en sevilen pub’larından. Canlı müzik, kaliteli bira ve sıcak bir ortam.</p>
+
+      <div class="buttons">
+        <a class="gold-btn" id="mapLink" href="#" target="_blank"><i data-lucide="navigation"></i> Yol Tarifi Al</a>
+        <a class="dark-btn" id="instagramLink" href="#" target="_blank"><i data-lucide="instagram"></i> Instagram</a>
+      </div>
+    </div>
+
+    <div class="open-card">
+      <b class="open-blink" id="openStatus">● AÇIK</b>
+      <p id="openHours">18:00 - 02:00</p>
+    </div>
+  </section>
+
+  <section class="info-grid">
+    <div class="info-card" id="beerInfoCard">
+      <i data-lucide="beer"></i>
+      <div><small>EN UCUZ BİRA</small><h3 id="cheapestBeerName">Efes 33cl</h3><p><b id="infoCheapest" style="color:#f5b21b;font-size:30px">120₺</b></p></div>
+    </div>
+    <div class="info-card" id="priceInfoCard">
+      <i data-lucide="tag"></i>
+      <div><small>ORTALAMA FİYAT</small><h3 id="infoAverage">165₺</h3><p>Ortalama bira fiyatı</p></div>
+    </div>
+    <div class="info-card" id="atmosphereInfoCard">
+      <i data-lucide="music"></i>
+      <div><small>ATMOSFER</small><h3 id="musicTitle">Canlı Müzik</h3><p id="atmosphereText">Pub • Bahçe • Samimi</p></div>
+    </div>
+    <div class="info-card" id="featuresInfoCard">
+      <i data-lucide="users"></i>
+      <div><small>ÖZELLİKLER</small><h3 id="featureTitle">Canlı Müzik</h3><p id="featuresText">Bahçe • Wi-Fi • Spor Yayını</p></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title"><i data-lucide="beer"></i> BİRA MENÜSÜ</h2>
+
+    <div class="menu-tabs beer-visual-tabs">
+      <div class="beer-tab draft-tab">
+        <span class="tab-icon">🍺</span>
+        <span class="tab-text">
+          <strong>FIÇI BİRALAR</strong>
+          <small>Taze • Soğuk • Fıçıdan</small>
+        </span>
+      </div>
+
+      <div class="beer-tab bottle-tab">
+        <span class="tab-icon">🍾</span>
+        <span class="tab-text">
+          <strong>ŞİŞE BİRALAR</strong>
+          <small>Şişe • Marka • Çeşitler</small>
+        </span>
+      </div>
+    </div>
+
+    <div class="menu-wrapper">
+      <div class="menu-box" id="draftMenu"></div>
+      <div class="menu-box" id="bottleMenu"></div>
+    </div>
+
+    <p class="note" id="lastUpdateText">ⓘ Fiyatlar sürekli güncellenir. Son güncelleme: Bugün 14:30</p>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title"><i data-lucide="camera"></i> MEKAN GÖRSELLERİ</h2>
+    <div class="gallery" id="gallery"></div>
+  </section>
+</div>
+
+<script src="data.js"></script>
+<script>
+function normalizeText(text){
+  return decodeURIComponent(text || "").trim().toLocaleLowerCase("tr-TR");
+}
+
+function getVenueFromUrl(){
+  const params = new URLSearchParams(window.location.search);
+  const name = params.get("name");
+  return venuesData.find(v => normalizeText(v.venue) === normalizeText(name)) || venuesData[0];
+}
+
+function getPriceLabel(beer){
+  const currentPrice = getCurrentPrice(beer);
+
+  if(beer.happyHourPrice && beer.happyHourEnd && currentPrice === beer.happyHourPrice){
+    return `
+      <div class="price-box">
+        <span class="old-price">${beer.normalPrice}₺</span>
+        <span class="new-price">${currentPrice}₺</span>
+        <span class="campaign-time">${beer.happyHourEnd}'a kadar</span>
+      </div>
+    `;
+  }
+
+  return `<b class="new-price">${currentPrice}₺</b>`;
+}
+
+function getAllBeers(venue){
+  return [...venue.beers].sort((a,b) => getCurrentPrice(a) - getCurrentPrice(b));
+}
+
+function renderMenu(menuId, beers){
+  const box = document.getElementById(menuId);
+  const sorted = [...beers].sort((a,b) => getCurrentPrice(a) - getCurrentPrice(b));
+  const cheapestPrice = sorted.length ? getCurrentPrice(sorted[0]) : null;
+
+  box.innerHTML = "";
+
+  sorted.forEach(beer => {
+    const price = getCurrentPrice(beer);
+    box.innerHTML += `
+      <div class="menu-row">
+        <div>
+          <h4>${beer.name}</h4>
+          <small>${beer.size}</small>
+        </div>
+        ${getPriceLabel(beer)}
+        <span>${price === cheapestPrice ? '<span class="cheapest">EN UCUZ</span>' : ''}</span>
+      </div>
+    `;
+  });
+}
+
+function renderVenue(){
+  const venue = getVenueFromUrl();
+  const allBeers = getAllBeers(venue);
+  const cheapest = allBeers[0];
+  const avg = Math.round(allBeers.reduce((sum,b)=>sum+getCurrentPrice(b),0) / allBeers.length);
+
+  document.title = venue.venue + " - BeerAntalya";
+  document.getElementById("hero").style.setProperty("--hero-img", `url("${venue.image}")`);
+  document.getElementById("area").innerText = "📍 " + venue.area;
+  document.getElementById("venueName").innerText = venue.venue;
+  document.getElementById("stars").innerHTML = `★★★★★ <span style="color:white;font-size:16px">${venue.rating || "4.5"} (${venue.reviews || "0"} yorum)</span>`;
+  document.getElementById("desc").innerText = venue.desc || "";
+  document.getElementById("openStatus").innerText = venue.openStatus || "● AÇIK";
+  document.getElementById("openHours").innerText = venue.hours || "18:00 - 02:00";
+
+  document.getElementById("beerInfoCard").style.backgroundImage = `url("https://images.unsplash.com/photo-1608270586620-248524c67de9?q=80&w=900")`;
+  document.getElementById("priceInfoCard").style.backgroundImage = `url("https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=900")`;
+  document.getElementById("atmosphereInfoCard").style.backgroundImage = `url("https://images.unsplash.com/photo-1506157786151-b8491531f063?q=80&w=900")`;
+  document.getElementById("featuresInfoCard").style.backgroundImage = `url("https://images.unsplash.com/photo-1525268323446-0505b6fe7778?q=80&w=900")`;
+
+  document.getElementById("cheapestBeerName").innerText = cheapest.name + " " + cheapest.size;
+  document.getElementById("infoCheapest").innerHTML = getPriceLabel(cheapest);
+  document.getElementById("infoAverage").innerText = avg + "₺";
+  document.getElementById("musicTitle").innerText = venue.musicTitle || "Canlı Müzik";
+  document.getElementById("atmosphereText").innerText = venue.atmosphere || "Pub • Samimi";
+  document.getElementById("featureTitle").innerText = venue.featureTitle || "Özellikler";
+  document.getElementById("featuresText").innerText = venue.features || "Wi-Fi • Bahçe";
+
+  document.getElementById("mapLink").href = venue.map || "#";
+  document.getElementById("instagramLink").href = venue.instagram || "#";
+
+  renderMenu("draftMenu", venue.beers.filter(beer => beer.type === "draft"));
+  renderMenu("bottleMenu", venue.beers.filter(beer => beer.type === "bottle"));
+
+  const gallery = document.getElementById("gallery");
+  gallery.innerHTML = "";
+  (venue.gallery || []).forEach(photo => {
+    gallery.innerHTML += `
+      <div class="photo">
+        <img src="${photo[0]}">
+        <p>${photo[1]}</p>
+      </div>
+    `;
+  });
+
+  document.getElementById("lastUpdateText").innerText = "ⓘ Fiyatlar sürekli güncellenir. Son güncelleme: Bugün 14:30";
+
+  if(window.lucide) lucide.createIcons();
+}
+
+renderVenue();
+
+setInterval(function(){
+  renderVenue();
+}, 60000);
+</script>
+
+
+<script>
+(function(){
+  function normalizeText(text){
+    return decodeURIComponent(text || "").trim().toLocaleLowerCase("tr-TR");
+  }
+
+  function getVenueFromUrlFixed(){
+    const params = new URLSearchParams(window.location.search);
+    const name = params.get("name");
+    return venuesData.find(v => normalizeText(v.venue) === normalizeText(name)) || venuesData[0];
+  }
+
+  function priceHtml(beer){
+    const currentPrice = getCurrentPrice(beer);
+
+    if(beer.happyHourPrice && beer.happyHourEnd && currentPrice === beer.happyHourPrice){
+      return `
+        <div class="price-box">
+          <span class="old-price">${beer.normalPrice}₺</span>
+          <span class="new-price">${currentPrice}₺</span>
+          <span class="campaign-time">${beer.happyHourEnd}'a kadar</span>
+        </div>
+      `;
+    }
+
+    return `<b class="new-price">${currentPrice}₺</b>`;
+  }
+
+  function renderMenuFixed(menuId, beers){
+    const box = document.getElementById(menuId);
+    if(!box) return;
+    const sorted = [...beers].sort((a,b) => getCurrentPrice(a) - getCurrentPrice(b));
+    const cheapestPrice = sorted.length ? getCurrentPrice(sorted[0]) : null;
+
+    box.innerHTML = "";
+
+    sorted.forEach(beer => {
+      const price = getCurrentPrice(beer);
+      box.innerHTML += `
+        <div class="menu-row">
+          <div>
+            <h4>${beer.name}</h4>
+            <small>${beer.size}</small>
+          </div>
+          ${priceHtml(beer)}
+          <span>${price === cheapestPrice ? '<span class="cheapest">EN UCUZ</span>' : ''}</span>
+        </div>
+      `;
+    });
+  }
+
+  function renderVenueFixed(){
+    const venue = getVenueFromUrlFixed();
+    const allBeers = [...venue.beers].sort((a,b) => getCurrentPrice(a) - getCurrentPrice(b));
+    const cheapest = allBeers[0];
+    const avg = Math.round(allBeers.reduce((sum,b) => sum + getCurrentPrice(b), 0) / allBeers.length);
+    const openInfo = typeof getVenueOpenInfo === "function" ? getVenueOpenInfo(venue) : {isOpen:true,text:"● AÇIK",className:"open-blink"};
+
+    document.title = venue.venue + " - BeerAntalya";
+
+    const hero = document.getElementById("hero");
+    if(hero) hero.style.setProperty("--hero-img", `url("${venue.image}")`);
+
+    const area = document.getElementById("area");
+    if(area) area.innerText = "📍 " + venue.area;
+
+    const venueName = document.getElementById("venueName");
+    if(venueName) venueName.innerText = venue.venue;
+
+    const stars = document.getElementById("stars");
+    if(stars) stars.innerHTML = `★★★★★ <span style="color:white;font-size:16px">${venue.rating || "4.5"} (${venue.reviews || "0"} yorum)</span>`;
+
+    const desc = document.getElementById("desc");
+    if(desc) desc.innerText = venue.desc || "";
+
+    const openStatus = document.getElementById("openStatus");
+    if(openStatus){
+      openStatus.innerText = openInfo.text;
+      openStatus.className = openInfo.className;
+    }
+
+    const openHours = document.getElementById("openHours");
+    if(openHours) openHours.innerText = venue.hours || "";
+
+    const cheapestName = document.getElementById("cheapestBeerName");
+    if(cheapestName) cheapestName.innerText = cheapest.name + " " + cheapest.size;
+
+    const infoCheapest = document.getElementById("infoCheapest");
+    if(infoCheapest) infoCheapest.innerHTML = priceHtml(cheapest);
+
+    const infoAverage = document.getElementById("infoAverage");
+    if(infoAverage) infoAverage.innerText = avg + "₺";
+
+    const musicTitle = document.getElementById("musicTitle");
+    if(musicTitle) musicTitle.innerText = venue.musicTitle || "Canlı Müzik";
+
+    const atmosphereText = document.getElementById("atmosphereText");
+    if(atmosphereText) atmosphereText.innerText = venue.atmosphere || "Pub • Samimi";
+
+    const featureTitle = document.getElementById("featureTitle");
+    if(featureTitle) featureTitle.innerText = venue.featureTitle || "Özellikler";
+
+    const featuresText = document.getElementById("featuresText");
+    if(featuresText) featuresText.innerText = venue.features || "Wi-Fi • Bahçe";
+
+    const mapLink = document.getElementById("mapLink");
+    if(mapLink) mapLink.href = venue.map || "#";
+
+    const instagramLink = document.getElementById("instagramLink");
+    if(instagramLink) instagramLink.href = venue.instagram || "#";
+
+    renderMenuFixed("draftMenu", venue.beers.filter(beer => beer.type === "draft"));
+    renderMenuFixed("bottleMenu", venue.beers.filter(beer => beer.type === "bottle"));
+
+    const gallery = document.getElementById("gallery");
+    if(gallery){
+      gallery.innerHTML = "";
+      (venue.gallery || []).forEach(photo => {
+        gallery.innerHTML += `
+          <div class="photo">
+            <img src="${photo[0]}">
+            <p>${photo[1]}</p>
+          </div>
+        `;
+      });
+    }
+
+    const lastUpdateText = document.getElementById("lastUpdateText");
+    if(lastUpdateText) lastUpdateText.innerText = "ⓘ Fiyatlar sürekli güncellenir. Son güncelleme: Bugün";
+
+    if(window.lucide) lucide.createIcons();
+  }
+
+  window.BA_renderVenueFixed = renderVenueFixed;
+  renderVenueFixed();
+  setInterval(renderVenueFixed, 60000);
+})();
+</script>
+
+</body>
+</html>
