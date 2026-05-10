@@ -174,11 +174,11 @@ const venuesData = [
   {
     "venue": "The Barrels",
     "area": "Lara",
-    "image": "https://images.unsplash.com/photo-1566417713940-fe7c737a9ef2?q=80&w=1600",
+    "image": "barels2.jpg",
     "cardImage": "https://images.unsplash.com/photo-1566417713940-fe7c737a9ef2?q=80&w=800",
     "url": "mekan.html?name=The%20Barrels",
     "map": "https://www.google.com/maps/search/?api=1&query=The%20Barrels%20Antalya",
-    "instagram": "https://instagram.com/beerantalya",
+    "instagram": "https://instagram.com/thebarrelskonyaalti",
     "rating": "4.3",
     "reviews": "63",
     "desc": "Arkadaşlarla gidilecek, fiyat-performans açısından güçlü pub seçeneklerinden biri.",
@@ -190,7 +190,7 @@ const venuesData = [
     "features": "Geniş Menü • Bahçe • Wi-Fi",
     "gallery": [
       [
-        "https://images.unsplash.com/photo-1566417713940-fe7c737a9ef2?q=80&w=800",
+        "barels1.jpg",
         "İç Mekan"
       ],
       [
@@ -202,7 +202,7 @@ const venuesData = [
         "Atmosfer"
       ],
       [
-        "https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=800",
+        "barels1.jpg",
         "Sosyal Alan"
       ]
     ],
@@ -211,55 +211,79 @@ const venuesData = [
         "name": "Efes Pilsen",
         "size": "50cl",
         "type": "draft",
-        "normalPrice": 156
+        "normalPrice": 190
       },
       {
-        "name": "Tuborg Gold",
+        "name": "Beck's",
         "size": "50cl",
         "type": "draft",
-        "normalPrice": 166
+        "normalPrice": 210
+      },
+      {
+        "name": "Belfast",
+        "size": "50cl",
+        "type": "draft",
+        "normalPrice": 210
+      },
+      {
+        "name": "Belfast Stout",
+        "size": "50cl",
+        "type": "draft",
+        "normalPrice": 250
+      },
+      {
+        "name": "Bud",
+        "size": "50cl",
+        "type": "draft",
+        "normalPrice":210
+      },
+      {
+        "name": "Stella Artois",
+        "size": "50cl",
+        "type": "draft",
+        "normalPrice": 230
+      },
+      {
+        "name": "Erdinger",
+        "size": "50cl",
+        "type": "draft",
+        "normalPrice": 280
       },
       {
         "name": "Bomonti",
         "size": "50cl",
-        "type": "draft",
-        "normalPrice": 181
-      },
-      {
-        "name": "Guinness",
-        "size": "50cl",
-        "type": "draft",
-        "normalPrice": 231
-      },
-      {
-        "name": "Carlsberg",
-        "size": "50cl",
-        "type": "draft",
-        "normalPrice": 201
+        "type": "bottle",
+        "normalPrice": 245
       },
       {
         "name": "Efes Pilsen",
-        "size": "33cl",
+        "size": "50cl",
         "type": "bottle",
-        "normalPrice": 141
+        "normalPrice": 220
       },
       {
-        "name": "Tuborg Gold",
-        "size": "33cl",
+        "name": "Efes Malt",
+        "size": "50cl",
         "type": "bottle",
-        "normalPrice": 121
+        "normalPrice": 235
       },
       {
-        "name": "Bomonti",
-        "size": "33cl",
+        "name": "Efes Özel Seri",
+        "size": "50cl",
         "type": "bottle",
-        "normalPrice": 131
+        "normalPrice": 235
       },
       {
-        "name": "Corona",
-        "size": "33cl",
+        "name": "Efes Glutensiz",
+        "size": "50cl",
         "type": "bottle",
-        "normalPrice": 166
+        "normalPrice": 235
+      },
+      {
+        "name": "Belfast",
+        "size": "50cl",
+        "type": "bottle",
+        "normalPrice": 235
       }
     ]
   },
