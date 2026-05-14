@@ -428,44 +428,71 @@ setInterval(function(){
 })();
 </script>
 <script>
-document.addEventListener("click", function(e) {
-  const img = e.target.closest("img");
+document.addEventListener("DOMContentLoaded", function () {
 
-  if (!img) return;
+  document.querySelectorAll("img").forEach(img => {
+    img.style.cursor = "pointer";
+  });
 
-  e.preventDefault();
-  e.stopPropagation();
+  document.addEventListener("click", function(e) {
 
-  const overlay = document.createElement("div");
-  overlay.style.cssText = `
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.95);
-    z-index: 99999999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    cursor: zoom-out;
-  `;
+    const img = e.target.closest("img");
 
-  const big = document.createElement("img");
-  big.src = img.src;
-  big.style.cssText = `
-    max-width: 95%;
-    max-height: 95%;
-    object-fit: contain;
-    border-radius: 18px;
-    box-shadow: 0 0 50px rgba(0,0,0,.9);
-  `;
+    if (!img) return;
 
-  overlay.appendChild(big);
-  document.body.appendChild(overlay);
+    const overlay = document.createElement("div");
 
-  overlay.onclick = function() {
-    overlay.remove();
-  };
-}, true);
+    overlay.style.cssText = `
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.96);
+      z-index: 99999999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    `;
+
+    const closeBtn = document.createElement("div");
+
+    closeBtn.innerHTML = "✕";
+
+    closeBtn.style.cssText = `
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      font-size: 42px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 999999999;
+      user-select: none;
+    `;
+
+    const big = document.createElement("img");
+
+    big.src = img.src;
+
+    big.style.cssText = `
+      max-width: 95%;
+      max-height: 95%;
+      object-fit: contain;
+      border-radius: 18px;
+      box-shadow: 0 0 50px rgba(0,0,0,.9);
+      cursor: default;
+    `;
+
+    closeBtn.onclick = () => overlay.remove();
+
+    overlay.appendChild(closeBtn);
+    overlay.appendChild(big);
+
+    document.body.appendChild(overlay);
+
+  }, true);
+
+});
 </script>
 </body>
 </html>
