@@ -283,3 +283,4 @@ document.addEventListener("click", function (e) {
   overlay.appendChild(bigImg);
   document.body.appendChild(overlay);
 });
+console.log("TEST");
