@@ -229,6 +229,26 @@ const searchBtn = document.getElementById("searchBtn");
 if (searchBtn) {
   searchBtn.addEventListener("click", () => {
     const input = document.getElementById("searchInput").value.toLowerCase().trim();
+    const cards = document.querySelectorAll(".card");
+
+    cards.forEach(card => {
+      const visibleText = card.innerText.toLowerCase();
+      const beerList = (card.getAttribute("data-beers") || "").toLowerCase();
+      const placeName = (card.getAttribute("data-name") || "").toLowerCase();
+      const areaName = (card.getAttribute("data-area") || "").toLowerCase();
+
+      const fullSearchText = visibleText + " " + beerList + " " + placeName + " " + areaName;
+
+      card.style.display = fullSearchText.includes(input) || input === "" ? "block" : "none";
+    });
+
+    document.getElementById("mekanlar")?.scrollIntoView({ behavior: "smooth" });
+  });
+}
+
+if (searchBtn) {
+  searchBtn.addEventListener("click", () => {
+    const input = document.getElementById("searchInput").value.toLowerCase().trim();
     const beer = document.getElementById("beerSelect").value.toLowerCase();
     const cards = document.querySelectorAll(".card");
 
