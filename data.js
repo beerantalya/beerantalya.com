@@ -2,35 +2,35 @@ const venuesData = [
   {
     "venue": "Gas Light Pub",
     "area": "Kaleiçi",
-    "image": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=1600",
+    "image": "gaslıght1.jpg",
     "cardImage": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=800",
     "url": "mekan.html?name=Gas%20Light%20Pub",
     "map": "https://www.google.com/maps/search/?api=1&query=Gas%20Light%20Pub%20Antalya",
     "instagram": "https://instagram.com/beerantalya",
-    "rating": "4.1",
-    "reviews": "45",
+    "rating": "4.4",
+    "reviews": "297",
     "desc": "Antalya’da bira fiyatları ve pub atmosferiyle öne çıkan keyifli mekan.",
     "openStatus": "● AÇIK",
-    "hours": "14:00 - 01:00",
+    "hours": "12:00 - 01:00",
     "musicTitle": "Canlı Müzik",
     "atmosphere": "Pub • Bahçe • Samimi",
     "featureTitle": "Canlı Müzik",
     "features": "Bahçe • Wi-Fi • Spor Yayını",
     "gallery": [
       [
-        "https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=800",
+        "gaslıght2.jpg",
         "İç Mekan"
       ],
       [
-        "https://images.unsplash.com/photo-1575444758702-4a6b9222336e?q=80&w=800",
+        "gaslıght3.jpg",
         "Bar Alanı"
       ],
       [
-        "https://images.unsplash.com/photo-1566417713940-fe7c737a9ef2?q=80&w=800",
+        "gaslıght4.jpg",
         "Bahçe / Teras"
       ],
       [
-        "https://images.unsplash.com/photo-1525268323446-0505b6fe7778?q=80&w=800",
+        "gaslıght5.jpg",
         "Canlı Müzik"
       ]
     ],

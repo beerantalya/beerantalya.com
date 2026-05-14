@@ -243,3 +243,108 @@ function BA_getPriceLabel(item){
 
   return `<b class="new-price">${currentPrice}₺</b>`;
 }
+const popup = document.getElementById("popup");
+const popupImg = document.getElementById("popup-img");
+
+document.querySelectorAll("img").forEach(img => {
+  img.onclick = () => {
+    popup.style.display = "flex";
+    popupImg.src = img.src;
+  };
+});
+
+document.addEventListener("click", function(e) {
+  if (e.target.tagName === "IMG") {
+    let popup = document.getElementById("popup");
+
+    if (!popup) {
+      popup = document.createElement("div");
+      popup.id = "popup";
+      popup.innerHTML = '<img id="popup-img">';
+      document.body.appendChild(popup);
+
+      popup.style.cssText = `
+        display:none;
+        position:fixed;
+        inset:0;
+        background:rgba(0,0,0,.9);
+        justify-content:center;
+        align-items:center;
+        z-index:99999;
+      `;
+
+      popup.querySelector("img").style.cssText = `
+        max-width:90%;
+        max-height:90%;
+        border-radius:12px;
+      `;
+
+      popup.onclick = () => popup.style.display = "none";
+    }
+
+    popup.style.display = "flex";
+    popup.querySelector("img").src = e.target.src;
+  }
+});
+;
+document.querySelectorAll("img").forEach(img => {
+  img.onclick = function () {
+
+    let bg = document.createElement("div");
+    bg.style = `
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,.9);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      z-index:99999;
+    `;
+
+    let big = document.createElement("img");
+    big.src = this.src;
+    big.style = `
+      max-width:90%;
+      max-height:90%;
+      border-radius:14px;
+    `;
+
+    bg.appendChild(big);
+
+    bg.onclick = () => bg.remove();
+
+    document.body.appendChild(bg);
+  };
+});
+document.addEventListener("click", function (e) {
+  const img = e.target.closest("img");
+
+  if (!img) return;
+
+  const overlay = document.createElement("div");
+  overlay.style.position = "fixed";
+  overlay.style.top = "0";
+  overlay.style.left = "0";
+  overlay.style.width = "100%";
+  overlay.style.height = "100%";
+  overlay.style.background = "rgba(0,0,0,0.9)";
+  overlay.style.display = "flex";
+  overlay.style.alignItems = "center";
+  overlay.style.justifyContent = "center";
+  overlay.style.zIndex = "999999";
+  overlay.style.cursor = "zoom-out";
+
+  const bigImg = document.createElement("img");
+  bigImg.src = img.src;
+  bigImg.style.maxWidth = "90%";
+  bigImg.style.maxHeight = "90%";
+  bigImg.style.borderRadius = "14px";
+  bigImg.style.boxShadow = "0 0 40px rgba(0,0,0,0.8)";
+
+  overlay.appendChild(bigImg);
+  document.body.appendChild(overlay);
+
+  overlay.addEventListener("click", function () {
+    overlay.remove();
+  });
+});
