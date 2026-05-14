@@ -1,7 +1,7 @@
 const venuesData = [
   {
     "venue": "Gas Light Pub",
-    "area": "Kaleiçi",
+    "area": "Konyaaltı",
     "image": "gaslıght1.jpg",
     "cardImage": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=800",
     "url": "mekan.html?name=Gas%20Light%20Pub",

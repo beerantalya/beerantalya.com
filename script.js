@@ -348,3 +348,49 @@ document.addEventListener("click", function (e) {
     overlay.remove();
   });
 });
+// TÜM MEKAN GÖRSELLERİNİ TIKLANINCA BÜYÜT
+document.addEventListener("DOMContentLoaded", function () {
+  const allImages = document.querySelectorAll("img, .gallery img, .mekan-img, .venue-img, .photo, .place-photo");
+
+  allImages.forEach(function (item) {
+    item.style.cursor = "pointer";
+
+    item.addEventListener("click", function () {
+      let imageUrl = "";
+
+      if (item.tagName.toLowerCase() === "img") {
+        imageUrl = item.src;
+      } else {
+        imageUrl = window.getComputedStyle(item).backgroundImage;
+        imageUrl = imageUrl.replace('url("', '').replace('")', '').replace("url(", "").replace(")", "");
+      }
+
+      if (!imageUrl) return;
+
+      const overlay = document.createElement("div");
+      overlay.style.position = "fixed";
+      overlay.style.inset = "0";
+      overlay.style.background = "rgba(0,0,0,0.92)";
+      overlay.style.zIndex = "999999";
+      overlay.style.display = "flex";
+      overlay.style.alignItems = "center";
+      overlay.style.justifyContent = "center";
+      overlay.style.cursor = "zoom-out";
+
+      overlay.innerHTML = `
+        <img src="${imageUrl}" style="
+          max-width:90%;
+          max-height:90%;
+          border-radius:18px;
+          box-shadow:0 0 40px rgba(0,0,0,.8);
+        ">
+      `;
+
+      document.body.appendChild(overlay);
+
+      overlay.addEventListener("click", function () {
+        overlay.remove();
+      });
+    });
+  });
+});
