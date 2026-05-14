@@ -261,6 +261,18 @@ document.addEventListener("click", function(e) {
       popup = document.createElement("div");
       popup.id = "popup";
       popup.innerHTML = '<img id="popup-img">';
+      const popupImg = document.getElementById("popup-img");
+
+document.querySelectorAll("img").forEach(img => {
+  img.addEventListener("click", () => {
+    popup.style.display = "flex";
+    popupImg.src = img.src;
+  });
+});
+
+popup.addEventListener("click", () => {
+  popup.style.display = "none";
+});
       document.body.appendChild(popup);
 
       popup.style.cssText = `
