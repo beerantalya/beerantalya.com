@@ -36,51 +36,103 @@ const venuesData = [
     ],
     "beers": [
       {
-        "name": "Efes Pilsen",
+        "name": "Blanc",
         "size": "50cl",
         "type": "draft",
-        "normalPrice": 150,
-        "happyHourPrice": 115,
-        "happyHourEnd": "19:00"
+        "normalPrice": 400,
       },
       {
-        "name": "Tuborg Gold",
+        "name": "Tuborg",
         "size": "50cl",
         "type": "draft",
-        "normalPrice": 160,
-        "happyHourPrice": 135,
-        "happyHourEnd": "20:00"
-      },
-      {
-        "name": "Bomonti",
-        "size": "50cl",
-        "type": "draft",
-        "normalPrice": 175
-      },
-      {
-        "name": "Guinness",
-        "size": "50cl",
-        "type": "draft",
-        "normalPrice": 225
+        "normalPrice": 300,
       },
       {
         "name": "Carlsberg",
         "size": "50cl",
         "type": "draft",
-        "normalPrice": 195
+        "normalPrice": 300
       },
       {
-        "name": "Efes Pilsen",
-        "size": "33cl",
-        "type": "bottle",
-        "normalPrice": 135
+        "name": "Guinness",
+        "size": "50cl",
+        "type": "draft",
+        "normalPrice": 400
       },
       {
-        "name": "Tuborg Gold",
-        "size": "33cl",
+        "name": "Weıhensttephaner",
+        "size": "50cl",
+        "type": "draft",
+        "normalPrice": 380
+      },
+      {
+        "name": "1664 Blanc",
+        "size": "50cl",
         "type": "bottle",
-        "normalPrice": 150
-      }
+        "normalPrice": 375
+      },
+      {
+        "name": "Calrsberg",
+        "size": "50",
+        "type": "bottle",
+        "normalPrice": 390
+      },
+      {
+        "name": "Calrsberg Luna",
+        "size": "50",
+        "type": "bottle",
+        "normalPrice": 340
+      },
+      {
+        "name": "Frederik Brown Ale",
+        "size": "50",
+        "type": "bottle",
+        "normalPrice": 420
+      },
+      {
+        "name": "Frederik Indıan Pale Ale",
+        "size": "50",
+        "type": "bottle",
+        "normalPrice": 420
+      },
+      {
+        "name": "Frederik Wheat Ipa",
+        "size": "50",
+        "type": "bottle",
+        "normalPrice": 420
+      },
+       {
+        "name": "Guınness",
+        "size": "50",
+        "type": "bottle",
+        "normalPrice": 445
+      },
+        {
+        "name": "Tuborg",
+        "size": "50",
+        "type": "bottle",
+        "normalPrice": 375
+      },
+        {
+        "name": "Tuborg Amber",
+        "size": "50",
+        "type": "bottle",
+        "normalPrice": 375
+      },
+        {
+        "name": "Tuborg Fıltresiz",
+        "size": "50",
+        "type": "bottle",
+        "normalPrice": 375
+      },
+        {
+        "name": "Tuborg Ice",
+        "size": "50",
+        "type": "bottle",
+        "normalPrice": 300
+      },
+
+
     ]
   },
   {
