@@ -119,7 +119,7 @@ a{text-decoration:none;color:inherit}
 
     <div class="open-card">
       <b class="open-blink" id="openStatus">● AÇIK</b>
-      <p id="openHours">18:00 - 02:00</p>
+      <p id="openHours">12:00 - 02:00</p>
     </div>
   </section>
 
@@ -427,6 +427,45 @@ setInterval(function(){
   setInterval(renderVenueFixed, 60000);
 })();
 </script>
+<script>
+document.addEventListener("click", function(e) {
+  const img = e.target.closest("img");
 
+  if (!img) return;
+
+  e.preventDefault();
+  e.stopPropagation();
+
+  const overlay = document.createElement("div");
+  overlay.style.cssText = `
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.95);
+    z-index: 99999999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    cursor: zoom-out;
+  `;
+
+  const big = document.createElement("img");
+  big.src = img.src;
+  big.style.cssText = `
+    max-width: 95%;
+    max-height: 95%;
+    object-fit: contain;
+    border-radius: 18px;
+    box-shadow: 0 0 50px rgba(0,0,0,.9);
+  `;
+
+  overlay.appendChild(big);
+  document.body.appendChild(overlay);
+
+  overlay.onclick = function() {
+    overlay.remove();
+  };
+}, true);
+</script>
 </body>
 </html>
