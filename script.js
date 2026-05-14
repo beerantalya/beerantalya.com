@@ -186,7 +186,35 @@ function loadPlacePage() {
   placeNameEl.textContent = name;
   document.getElementById("placeLocation").textContent = place.location;
   document.getElementById("placeDesc").textContent = place.desc;
-  document.getElementById("placeImage").src = place.image;
+  const placeImage = document.getElementById("placeImage");
+placeImage.src = place.image;
+placeImage.style.cursor = "pointer";
+
+placeImage.onclick = function () {
+  const overlay = document.createElement("div");
+  overlay.style.cssText = `
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.95);
+    z-index: 999999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: zoom-out;
+  `;
+
+  overlay.innerHTML = `
+    <img src="${placeImage.src}" style="
+      max-width: 92%;
+      max-height: 92%;
+      border-radius: 18px;
+      box-shadow: 0 0 40px rgba(0,0,0,.8);
+    ">
+  `;
+
+  overlay.onclick = () => overlay.remove();
+  document.body.appendChild(overlay);
+};
 
   document.getElementById("efesPrice").textContent = place.prices[0];
   document.getElementById("tuborgPrice").textContent = place.prices[1];
