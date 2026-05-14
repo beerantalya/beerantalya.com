@@ -234,7 +234,11 @@ if (searchBtn) {
 
     cards.forEach(card => {
       const text = card.innerText.toLowerCase();
-      const matchInput = input === "" || text.includes(input);
+      const beers = card.getAttribute("data-beers") || "";
+      const matchInput =
+  input === "" ||
+  text.includes(input) ||
+  beers.toLowerCase().includes(input);
       const matchBeer = beer.includes("bira") || beer.includes("select") || text.includes(beer);
 
       card.style.display = matchInput && matchBeer ? "block" : "none";
