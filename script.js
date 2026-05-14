@@ -283,4 +283,49 @@ document.addEventListener("click", function (e) {
   overlay.appendChild(bigImg);
   document.body.appendChild(overlay);
 });
-console.log("TEST");
+document.addEventListener("click", function (e) {
+  const target = e.target.closest("img, [style*='background-image'], .card, .place-card, .gallery-item, .photo-card");
+
+  if (!target) return;
+
+  let src = "";
+
+  if (target.tagName === "IMG") {
+    src = target.src;
+  } else {
+    const bg = window.getComputedStyle(target).backgroundImage;
+    if (bg && bg !== "none") {
+      src = bg.replace(/^url\(["']?/, "").replace(/["']?\)$/, "");
+    }
+
+    const imgInside = target.querySelector("img");
+    if (!src && imgInside) src = imgInside.src;
+  }
+
+  if (!src) return;
+
+  const overlay = document.createElement("div");
+  overlay.style.cssText = `
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.95);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999999;
+    cursor:zoom-out;
+  `;
+
+  const big = document.createElement("img");
+  big.src = src;
+  big.style.cssText = `
+    max-width:92%;
+    max-height:92%;
+    border-radius:18px;
+    box-shadow:0 0 40px rgba(0,0,0,.9);
+  `;
+
+  overlay.appendChild(big);
+  overlay.onclick = () => overlay.remove();
+  document.body.appendChild(overlay);
+});
