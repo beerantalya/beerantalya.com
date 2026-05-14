@@ -6,7 +6,7 @@ const venuesData = [
     "cardImage": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=800",
     "url": "mekan.html?name=Gas%20Light%20Pub",
     "map": "https://www.google.com/maps/search/?api=1&query=Gas%20Light%20Pub%20Antalya",
-    "instagram": "https://instagram.com/beerantalya",
+    "instagram": "https://instagram.com/gaslightpub",
     "rating": "4.4",
     "reviews": "297",
     "desc": "Antalya’da bira fiyatları ve pub atmosferiyle öne çıkan keyifli mekan.",
