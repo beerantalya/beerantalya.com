@@ -136,18 +136,18 @@ const venuesData = [
     ]
   },
   {
-    "venue": "Dolu Pub",
+    "venue": "Varuna Beach Park",
     "area": "Konyaaltı",
-    "image": "https://images.unsplash.com/photo-1575444758702-4a6b9222336e?q=80&w=1600",
-    "cardImage": "https://images.unsplash.com/photo-1575444758702-4a6b9222336e?q=80&w=800",
-    "url": "mekan.html?name=Dolu%20Pub",
-    "map": "https://www.google.com/maps/search/?api=1&query=Dolu%20Pub%20Antalya",
-    "instagram": "https://instagram.com/beerantalya",
-    "rating": "4.2",
-    "reviews": "54",
+    "image": "varuna1.jpg",
+    "cardImage": "varuna1.jpg",
+    "url": "mekan.html?name=Varuna%20Beach%20Park",
+    "map": "https://www.google.com/maps/search/?api=1&query=Varuna%20Beach%20Park%20Antalya",
+    "instagram": "https://instagram.com/varunabeachpark",
+    "rating": "3.9",
+    "reviews": "679",
     "desc": "Rahat ortamı, soğuk bira seçenekleri ve samimi servisiyle popüler bir adres.",
     "openStatus": "● AÇIK",
-    "hours": "15:00 - 02:00",
+    "hours": "07:00 - 01:30",
     "musicTitle": "Akustik Müzik",
     "atmosphere": "Modern • Hareketli • Bar",
     "featureTitle": "Spor Yayını",
@@ -162,7 +162,7 @@ const venuesData = [
         "Masa Alanı"
       ],
       [
-        "https://images.unsplash.com/photo-1525268323446-0505b6fe7778?q=80&w=800",
+        "varuna1.jpg",
         "Pub Atmosferi"
       ],
       [
@@ -172,55 +172,83 @@ const venuesData = [
     ],
     "beers": [
       {
-        "name": "Efes Pilsen",
+        "name": "Efes Pilsner",
         "size": "50cl",
         "type": "draft",
-        "normalPrice": 150,
-        "happyHourPrice": 90,
-        "happyHourEnd": "19:00"
+        "normalPrice": 255
       },
       {
-        "name": "Tuborg Gold",
+        "name": "Belfast",
         "size": "50cl",
         "type": "draft",
-        "normalPrice": 163
+        "normalPrice": 265
       },
       {
-        "name": "Bomonti",
+        "name": "Becks",
         "size": "50cl",
         "type": "draft",
-        "normalPrice": 178
+        "normalPrice": 295
       },
       {
-        "name": "Guinness",
+        "name": "Bud",
         "size": "50cl",
         "type": "draft",
-        "normalPrice": 228
+        "normalPrice": 295
       },
       {
-        "name": "Carlsberg",
-        "size": "50cl",
-        "type": "draft",
-        "normalPrice": 198
-      },
-      {
-        "name": "Efes Pilsen",
-        "size": "33cl",
+        "name": "Stella",
+        "size": "44cl",
         "type": "bottle",
-        "normalPrice": 138
+        "normalPrice": 300
       },
       {
-        "name": "Tuborg Gold",
-        "size": "33cl",
+        "name": "Belfast",
+        "size": "50cl",
         "type": "bottle",
-        "normalPrice": 153
+        "normalPrice": 285
       },
       {
-        "name": "Bomonti",
-        "size": "33cl",
+        "name": "Efes Malt",
+        "size": "50cl",
         "type": "bottle",
-        "normalPrice": 128
-      }
+        "normalPrice": 275
+      },
+      {
+        "name": "Bomonti Filtresiz",
+        "size": "50cl",
+        "type": "bottle",
+        "normalPrice": 285
+      },
+      {
+        "name": "Efes Özel Seri",
+        "size": "50cl",
+        "type": "bottle",
+        "normalPrice": 305
+      },
+      {
+        "name": "Efes Glutensiz",
+        "size": "50cl",
+        "type": "bottle",
+        "normalPrice": 315
+      },
+      {
+        "name": "Bud",
+        "size": "50cl",
+        "type": "bottle",
+        "normalPrice": 315
+      },
+      {
+        "name": "Becks",
+        "size": "50cl",
+        "type": "bottle",
+        "normalPrice": 335
+      },
+      {
+        "name": "Amsterdam",
+        "size": "50cl",
+        "type": "bottle",
+        "normalPrice": 415
+      },
     ]
   },
   {
@@ -713,7 +741,7 @@ const venuesData = [
     "reviews": "1740",
     "desc": "Canlı müzik, geniş oturma alanı ve güncel bira menüsüyle dikkat çeken mekan.",
     "openStatus": "● AÇIK",
-    "hours": "16:00 - 03:00",
+    "hours": "11:00 - 01:30",
     "musicTitle": "DJ Performans",
     "atmosphere": "Sahil • Ferah • Yazlık",
     "featureTitle": "Bira Çeşidi",
