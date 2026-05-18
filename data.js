@@ -702,15 +702,15 @@ const venuesData = [
     ]
   },
   {
-    "venue": "Old Town Beer House",
-    "area": "Lara",
+    "venue": "Dubhlinn",
+    "area": "Kaleiçi",
     "image": "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?q=80&w=1600",
-    "cardImage": "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?q=80&w=800",
-    "url": "mekan.html?name=Old%20Town%20Beer%20House",
-    "map": "https://www.google.com/maps/search/?api=1&query=The%20Laugh%20Doolin%20Irish%20Pub%20Lara%20Antalya",
-"instagram": "https://instagram.com/doolinirishpub",
-    "rating": "4.8",
-    "reviews": "108",
+    "cardImage": "dublin.jpg",
+    "url": "mekan.html?name=Dubhlinn",
+    "map": "https://www.google.com/maps/search/?api=1&query=Dubh%20Linn%20Irish%20Pub%20K%C4%B1l%C4%B1n%C3%A7arslan%20Hesap%C3%A7%C4%B1%20Sk%20No53%2007100%20Muratpa%C5%9Fa%20Antalya",
+"instagram": "https://instagram.com/dubhlinnkaleici",
+    "rating": "4.6",
+    "reviews": "1740",
     "desc": "Canlı müzik, geniş oturma alanı ve güncel bira menüsüyle dikkat çeken mekan.",
     "openStatus": "● AÇIK",
     "hours": "16:00 - 03:00",
@@ -738,65 +738,137 @@ const venuesData = [
     ],
     "beers": [
       {
-        "name": "Efes Pilsen",
+        "name": "Tuborg",
         "size": "50cl",
         "type": "draft",
-        "normalPrice": 171
-      },
-      {
-        "name": "Tuborg Gold",
-        "size": "50cl",
-        "type": "draft",
-        "normalPrice": 181
-      },
-      {
-        "name": "Bomonti",
-        "size": "50cl",
-        "type": "draft",
-        "normalPrice": 196
-      },
-      {
-        "name": "Guinness",
-        "size": "50cl",
-        "type": "draft",
-        "normalPrice": 211
+        "normalPrice": 245
       },
       {
         "name": "Carlsberg",
         "size": "50cl",
         "type": "draft",
-        "normalPrice": 181
+        "normalPrice": 260
       },
       {
-        "name": "Efes Pilsen",
-        "size": "33cl",
-        "type": "bottle",
-        "normalPrice": 121
+        "name": "Carlsberg Luna",
+        "size": "50cl",
+        "type": "draft",
+        "normalPrice": 280
       },
       {
-        "name": "Tuborg Gold",
-        "size": "33cl",
-        "type": "bottle",
-        "normalPrice": 136
+        "name": "Guinness",
+        "size": "50cl",
+        "type": "draft",
+        "normalPrice": 350
       },
       {
-        "name": "Bomonti",
-        "size": "33cl",
-        "type": "bottle",
-        "normalPrice": 146
+        "name": "Stella Artoıs",
+        "size": "50cl",
+        "type": "draft",
+        "normalPrice": 280
       },
       {
-        "name": "Corona",
+        "name": "Bomonti Filtresiz",
+        "size": "50cl",
+        "type": "draft",
+        "normalPrice": 275
+      },
+      {
+        "name": "Weihenstephan",
+        "size": "50cl",
+        "type": "draft",
+        "normalPrice": 350
+      },
+      {
+        "name": "Kronenbourg Blanc",
+        "size": "50cl",
+        "type": "draft",
+        "normalPrice": 350
+      },
+      {
+        "name": "Kilkenny",
+        "size": "50cl",
+        "type": "draft",
+        "normalPrice": 350
+      },
+      {
+        "name": "Tuborg Amber",
+        "size": "50cl",
+        "type": "bottle",
+        "normalPrice": 275
+      },
+      {
+        "name": "Frederik Neipa",
+        "size": "35cl",
+        "type": "bottle",
+        "normalPrice": 295
+      },
+      {
+        "name": "Heineken",
         "size": "33cl",
         "type": "bottle",
-        "normalPrice": 181
+        "normalPrice": 365
       },
       {
         "name": "Budweiser",
         "size": "33cl",
         "type": "bottle",
-        "normalPrice": 181
-      }
+        "normalPrice": 365
+      },
+      {
+        "name": "BLeffe Blonde",
+        "size": "33cl",
+        "type": "bottle",
+        "normalPrice": 380
+      },
+      {
+        "name": "Sevilen Apple Cider",
+        "size": "33cl",
+        "type": "bottle",
+        "normalPrice": 385
+      },
+      {
+        "name": "Strongbow Apple Cider",
+        "size": "33cl",
+        "type": "bottle",
+        "normalPrice": 445
+      },
+      {
+        "name": "Duvel",
+        "size": "33cl",
+        "type": "bottle",
+        "normalPrice": 460
+      },
+      {
+        "name": "Blue Moon",
+        "size": "33cl",
+        "type": "bottle",
+        "normalPrice": 410
+      },
+      {
+        "name": "Schlenkerla Marzen Rauchbier",
+        "size": "50cl",
+        "type": "bottle",
+        "normalPrice": 535
+      },
+      {
+        "name": "Pilsner Urquell",
+        "size": "33cl",
+        "type": "bottle",
+        "normalPrice": 375
+      },
+      {
+        "name": "Efes Glutensiz",
+        "size": "50cl",
+        "type": "bottle",
+        "normalPrice": 305
+      },
+      {
+        "name": "Clausthaler Non - Alcoholic",
+        "size": "33cl",
+        "type": "bottle",
+        "normalPrice": 295
+      },
     ]
   },
   {
