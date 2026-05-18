@@ -255,7 +255,7 @@ const venuesData = [
     "venue": "The Barrels",
     "area": "Konyaaltı",
     "image": "barels2.jpg",
-    "cardImage": "https://images.unsplash.com/photo-1566417713940-fe7c737a9ef2?q=80&w=800",
+    "cardImage": "barels2.jpg",
     "url": "mekan.html?name=The%20Barrels",
     "map": "https://www.google.com/maps/search/?api=1&query=The%20Barrels%20Antalya",
     "instagram": "https://instagram.com/thebarrelskonyaalti",
