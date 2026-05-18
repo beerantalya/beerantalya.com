@@ -604,14 +604,14 @@ const venuesData = [
     ]
   },
   {
-    "venue": "Harbor Irish Pub",
-    "area": "Konyaaltı",
-    "image": "https://images.unsplash.com/photo-1544145945-f90425340c7e?q=80&w=1600",
-    "cardImage": "https://images.unsplash.com/photo-1544145945-f90425340c7e?q=80&w=800",
-    "url": "mekan.html?name=Harbor%20Irish%20Pub",
-    "map": "https://www.google.com/maps/search/?api=1&query=Harbor%20Irish%20Pub%20Antalya",
+    "venue": "The Laugh Doolin Irısh Pub",
+    "area": "Lara",
+    "image": "doolin1.jpg",
+    "cardImage": "doolin2.jpg",
+    "url": "mekan.html?name=The%20Laugh%20Doolin%20Ir%C4%B1sh%20Pub",
+    "map": "https://www.google.com/maps/search/?api=1&query=The%20Laugh%20Doolin%20Irish%20Pub%20Lara%20Ye%C5%9Filbah%C3%A7e%20Metin%20Kasapo%C4%9Flu%20Cd%20A.Kadam%20%C4%B0%C5%9F%20Merkezi%20No%2052%20Muratpa%C5%9Fa%20Antalya",
     "instagram": "https://instagram.com/beerantalya",
-    "rating": "4.7",
+    "rating": "4.4",
     "reviews": "99",
     "desc": "Arkadaşlarla gidilecek, fiyat-performans açısından güçlü pub seçeneklerinden biri.",
     "openStatus": "● AÇIK",
@@ -622,76 +622,82 @@ const venuesData = [
     "features": "Wi-Fi • Maç Yayını • Bahçe",
     "gallery": [
       [
-        "https://images.unsplash.com/photo-1544145945-f90425340c7e?q=80&w=800",
+        "doolin3.jpg",
         "İç Mekan"
       ],
       [
-        "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?q=80&w=800",
+        "doolin5.jpg",
         "Bar Alanı"
       ],
       [
-        "https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=800",
+        "doolin2.jpg",
         "Bahçe / Teras"
       ],
       [
-        "https://images.unsplash.com/photo-1575444758702-4a6b9222336e?q=80&w=800",
+        "doolin4.jpg",
         "Canlı Müzik"
       ]
     ],
     "beers": [
       {
-        "name": "Efes Pilsen",
-        "size": "50cl",
-        "type": "draft",
-        "normalPrice": 168
-      },
-      {
         "name": "Tuborg Gold",
         "size": "50cl",
         "type": "draft",
-        "normalPrice": 178
-      },
-      {
-        "name": "Bomonti",
-        "size": "50cl",
-        "type": "draft",
-        "normalPrice": 193
-      },
-      {
-        "name": "Guinness",
-        "size": "50cl",
-        "type": "draft",
-        "normalPrice": 243
+        "normalPrice": 235
       },
       {
         "name": "Carlsberg",
         "size": "50cl",
         "type": "draft",
-        "normalPrice": 178
+        "normalPrice": 250
       },
       {
-        "name": "Efes Pilsen",
-        "size": "33cl",
-        "type": "bottle",
-        "normalPrice": 118
+        "name": "Carlsberg Luna",
+        "size": "50cl",
+        "type": "draft",
+        "normalPrice": 280
+      },
+      {
+        "name": "Guinness",
+        "size": "50cl",
+        "type": "draft",
+        "normalPrice": 440
+      },
+      {
+        "name": "Blanc",
+        "size": "50cl",
+        "type": "draft",
+        "normalPrice": 280
       },
       {
         "name": "Tuborg Gold",
-        "size": "33cl",
+        "size": "50cl",
         "type": "bottle",
-        "normalPrice": 133
+        "normalPrice": 250
       },
       {
-        "name": "Bomonti",
-        "size": "33cl",
+        "name": "Tuborg Filtresiz",
+        "size": "50cl",
         "type": "bottle",
-        "normalPrice": 143
+        "normalPrice": 280
       },
       {
-        "name": "Corona",
-        "size": "33cl",
+        "name": "Tuborg Amber",
+        "size": "50cl",
         "type": "bottle",
-        "normalPrice": 178
+        "normalPrice": 280
+      },
+      {
+        "name": "Carlsberg",
+        "size": "50cl",
+        "type": "bottle",
+        "normalPrice": 260
+      },
+      {
+        "name": "Carlsberg Luna",
+        "size": "50cl",
+        "type": "bottle",
+        "normalPrice": 280
       }
     ]
   },
@@ -701,8 +707,8 @@ const venuesData = [
     "image": "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?q=80&w=1600",
     "cardImage": "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?q=80&w=800",
     "url": "mekan.html?name=Old%20Town%20Beer%20House",
-    "map": "https://www.google.com/maps/search/?api=1&query=Old%20Town%20Beer%20House%20Antalya",
-    "instagram": "https://instagram.com/beerantalya",
+    "map": "https://www.google.com/maps/search/?api=1&query=The%20Laugh%20Doolin%20Irish%20Pub%20Lara%20Antalya",
+"instagram": "https://instagram.com/doolinirishpub",
     "rating": "4.8",
     "reviews": "108",
     "desc": "Canlı müzik, geniş oturma alanı ve güncel bira menüsüyle dikkat çeken mekan.",
