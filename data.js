@@ -369,7 +369,7 @@ const venuesData = [
   },
   {
     "venue": "Çöplük",
-    "area": "kaleiçi",
+    "area": "Kaleiçi",
     "image": "copluk.jpg",
     "cardImage": "./copluk.jpg",
     "url": "mekan.html?name=%C3%87%C3%B6pl%C3%BCk",
