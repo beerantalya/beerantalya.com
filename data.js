@@ -371,7 +371,7 @@ const venuesData = [
     "venue": "Çöplük",
     "area": "kaleiçi",
     "image": "copluk.jpg",
-    "cardImage": "copluk.jpg",
+    "cardImage": "/copluk.jpg",
     "url": "mekan.html?name=%C3%87%C3%B6pl%C3%BCk",
     "map": "https://www.google.com/maps/search/?api=1&query=%C3%87%C3%B6pl%C3%BCk%20Antalya",
     "instagram": "https://instagram.com/coplukantalya",
