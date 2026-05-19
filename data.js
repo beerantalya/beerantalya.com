@@ -368,22 +368,22 @@ const venuesData = [
     ]
   },
   {
-    "venue": "Route Beer House",
-    "area": "Muratpaşa",
-    "image": "https://images.unsplash.com/photo-1525268323446-0505b6fe7778?q=80&w=1600",
-    "cardImage": "https://images.unsplash.com/photo-1525268323446-0505b6fe7778?q=80&w=800",
-    "url": "mekan.html?name=Route%20Beer%20House",
-    "map": "https://www.google.com/maps/search/?api=1&query=Route%20Beer%20House%20Antalya",
-    "instagram": "https://instagram.com/beerantalya",
-    "rating": "4.4",
-    "reviews": "72",
+    "venue": "Çöplük",
+    "area": "kaleiçi",
+    "image": "copluk.jpg",
+    "cardImage": "copluk.jpg",
+    "url": "mekan.html?name=%C3%87%C3%B6pl%C3%BCk",
+    "map": "https://www.google.com/maps/search/?api=1&query=%C3%87%C3%B6pl%C3%BCk%20Antalya",
+    "instagram": "https://instagram.com/coplukantalya",
+    "rating": "4.1",
+    "reviews": "2357",
     "desc": "Canlı müzik, geniş oturma alanı ve güncel bira menüsüyle dikkat çeken mekan.",
     "openStatus": "● AÇIK",
-    "hours": "17:00 - 00:00",
+    "hours": "11:00 - 04:00",
     "musicTitle": "Rahat Pub",
     "atmosphere": "Geniş • Sosyal • Beer House",
     "featureTitle": "Açık Alan",
-    "features": "Teras • Açık Alan • Sosyal",
+    "features": "Canlı Müzik • Açık Alan • Sosyal",
     "gallery": [
       [
         "https://images.unsplash.com/photo-1525268323446-0505b6fe7778?q=80&w=800",
@@ -404,64 +404,70 @@ const venuesData = [
     ],
     "beers": [
       {
-        "name": "Efes Pilsen",
-        "size": "50cl",
-        "type": "draft",
-        "normalPrice": 159
-      },
-      {
         "name": "Tuborg Gold",
         "size": "50cl",
         "type": "draft",
-        "normalPrice": 169
+        "normalPrice": 310
       },
       {
-        "name": "Bomonti",
+        "name": "Tuborg Filtresiz",
         "size": "50cl",
         "type": "draft",
-        "normalPrice": 184
+        "normalPrice": 310
       },
       {
-        "name": "Guinness",
+        "name": "Tuborg Amber",
         "size": "50cl",
         "type": "draft",
-        "normalPrice": 234
+        "normalPrice": 310
       },
       {
         "name": "Carlsberg",
         "size": "50cl",
         "type": "draft",
-        "normalPrice": 204
+        "normalPrice": 330
       },
       {
-        "name": "Efes Pilsen",
-        "size": "33cl",
-        "type": "bottle",
-        "normalPrice": 144
+        "name": "Tuborg Ice",
+        "size": "50cl",
+        "type": "draft",
+        "normalPrice": 330
+      },
+      {
+        "name": "Carlsberg Luna",
+        "size": "50cl",
+        "type": "draft",
+        "normalPrice": 330
       },
       {
         "name": "Tuborg Gold",
-        "size": "33cl",
+        "size": "50cl",
         "type": "bottle",
-        "normalPrice": 124
+        "normalPrice": 310
       },
       {
-        "name": "Bomonti",
+        "name": "Tuborg Smooth",
         "size": "33cl",
         "type": "bottle",
-        "normalPrice": 134
+        "normalPrice": 345
       },
       {
-        "name": "Corona",
+        "name": "Blanc",
         "size": "33cl",
         "type": "bottle",
-        "normalPrice": 169
+        "normalPrice": 345
       },
       {
-        "name": "Budweiser",
+        "name": "Sol",
         "size": "33cl",
         "type": "bottle",
-        "normalPrice": 169
+        "normalPrice": 345
+      },
+      {
+        "name": "Weinhenstephan",
+        "size": "33cl",
+        "type": "bottle",
+        "normalPrice": 345
       }
     ]
   },
