@@ -472,18 +472,18 @@ const venuesData = [
     ]
   },
   {
-    "venue": "Lara Beach Pub",
-    "area": "Kepez",
-    "image": "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=1600",
-    "cardImage": "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=800",
-    "url": "mekan.html?name=Lara%20Beach%20Pub",
-    "map": "https://www.google.com/maps/search/?api=1&query=Lara%20Beach%20Pub%20Antalya",
-    "instagram": "https://instagram.com/beerantalya",
-    "rating": "4.5",
-    "reviews": "81",
+    "venue": "Elefante Pub",
+    "area": "Kaleiçi",
+    "image": "elefante.jpg",
+    "cardImage": "elefante.jpg",
+    "url": "mekan.html?name=Elefante%20Pub",
+    "map": "https://www.google.com/maps/search/?api=1&query=Elefante%20Pub%20Antalya",
+    "instagram": "https://instagram.com/elefantepub",
+    "rating": "4.7",
+    "reviews": "740",
     "desc": "Antalya’da bira fiyatları ve pub atmosferiyle öne çıkan keyifli mekan.",
     "openStatus": "● AÇIK",
-    "hours": "18:00 - 02:00",
+    "hours": "15:00 - 02:00",
     "musicTitle": "Modern Bar",
     "atmosphere": "Uygun Fiyat • Genç • Samimi",
     "featureTitle": "Gece Hayatı",
@@ -508,47 +508,101 @@ const venuesData = [
     ],
     "beers": [
       {
-        "name": "Efes Pilsen",
+        "name": "Tuborg",
         "size": "50cl",
         "type": "draft",
-        "normalPrice": 162
-      },
-      {
-        "name": "Tuborg Gold",
-        "size": "50cl",
-        "type": "draft",
-        "normalPrice": 172
-      },
-      {
-        "name": "Bomonti",
-        "size": "50cl",
-        "type": "draft",
-        "normalPrice": 187
-      },
-      {
-        "name": "Guinness",
-        "size": "50cl",
-        "type": "draft",
-        "normalPrice": 237
+        "normalPrice": 210
       },
       {
         "name": "Carlsberg",
         "size": "50cl",
         "type": "draft",
-        "normalPrice": 207
+        "normalPrice": 220
       },
       {
-        "name": "Efes Pilsen",
-        "size": "33cl",
-        "type": "bottle",
-        "normalPrice": 112
+        "name": "Kronenbourg 1664 Blanc",
+        "size": "50cl",
+        "type": "draft",
+        "normalPrice": 260
       },
       {
         "name": "Tuborg Gold",
+        "size": "50cl",
+        "type": "bottle",
+        "normalPrice": 230
+      },
+      {
+        "name": "Tuborg Filtresiz",
+        "size": "50cl",
+        "type": "bottle",
+        "normalPrice": 280
+      },
+      {
+        "name": "Tuborg Amber",
+        "size": "50cl",
+        "type": "bottle",
+        "normalPrice": 280
+      },
+      {
+        "name": "Carlsberg",
+        "size": "50cl",
+        "type": "bottle",
+        "normalPrice": 250
+      },
+       {
+        "name": "Carlsberg Luna",
+        "size": "50cl",
+        "type": "bottle",
+        "normalPrice": 280
+      },
+       {
+        "name": "Heıneken",
         "size": "33cl",
         "type": "bottle",
-        "normalPrice": 127
-      }
+        "normalPrice": 320
+      },
+       {
+        "name": "Guınnes",
+        "size": "44cl",
+        "type": "bottle",
+        "normalPrice": 450
+      },
+       {
+        "name": "Amsterdam",
+        "size": "50cl",
+        "type": "bottle",
+        "normalPrice": 420
+      },
+       {
+        "name": "Beck's",
+        "size": "33cl",
+        "type": "bottle",
+        "normalPrice": 300
+      },
+       {
+        "name": "Sol",
+        "size": "33cl",
+        "type": "bottle",
+        "normalPrice": 350
+      },
+       {
+        "name": "Budweıser",
+        "size": "50cl",
+        "type": "bottle",
+        "normalPrice": 320
+      },
+       {
+        "name": "Desperados",
+        "size": "33cl",
+        "type": "bottle",
+        "normalPrice": 400
+      },
+       {
+        "name": "Frederık Wheat ıpa",
+        "size": "35cl",
+        "type": "bottle",
+        "normalPrice": 320
+      },  
     ]
   },
   {
