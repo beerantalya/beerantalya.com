@@ -960,22 +960,22 @@ const venuesData = [
     ]
   },
   {
-    "venue": "Kale Pub",
-    "area": "Muratpaşa",
-    "image": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=1600",
-    "cardImage": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=800",
-    "url": "mekan.html?name=Kale%20Pub",
-    "map": "https://www.google.com/maps/search/?api=1&query=Kale%20Pub%20Antalya",
-    "instagram": "https://instagram.com/beerantalya",
-    "rating": "4.1",
-    "reviews": "117",
+    "venue": "Asi Pub",
+    "area": "Kaleiçi",
+    "image": "ası2.jpg",
+    "cardImage": "ası1.jpg",
+    "url": "mekan.html?name=Asi%20Pub",
+    "map": "https://www.google.com/maps/search/?api=1&query=Asi%20Pub%20Antalya",
+    "instagram": "https://instagram.com/alkollu_sanatsal_isler",
+    "rating": "4.4",
+    "reviews": "47",
     "desc": "Antalya’da bira fiyatları ve pub atmosferiyle öne çıkan keyifli mekan.",
     "openStatus": "● AÇIK",
-    "hours": "17:00 - 00:00",
+    "hours": "12:00 - 02:00",
     "musicTitle": "Rahat Pub",
     "atmosphere": "Geniş • Sosyal • Beer House",
     "featureTitle": "Açık Alan",
-    "features": "Teras • Açık Alan • Sosyal",
+    "features": "Bahçe • Açık Alan • Sosyal",
     "gallery": [
       [
         "https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=800",
@@ -996,64 +996,94 @@ const venuesData = [
     ],
     "beers": [
       {
-        "name": "Efes Pilsen",
+        "name": "Efes Malt",
         "size": "50cl",
         "type": "draft",
-        "normalPrice": 174
+        "normalPrice": 180
       },
       {
-        "name": "Tuborg Gold",
+        "name": "Beck's",
         "size": "50cl",
         "type": "draft",
-        "normalPrice": 184
+        "normalPrice": 200
       },
       {
-        "name": "Bomonti",
+        "name": "Belfast",
         "size": "50cl",
         "type": "draft",
-        "normalPrice": 199
-      },
-      {
-        "name": "Guinness",
-        "size": "50cl",
-        "type": "draft",
-        "normalPrice": 214
-      },
-      {
-        "name": "Carlsberg",
-        "size": "50cl",
-        "type": "draft",
-        "normalPrice": 184
+        "normalPrice": 200
       },
       {
         "name": "Efes Pilsen",
-        "size": "33cl",
+        "size": "50cl",
         "type": "bottle",
-        "normalPrice": 124
+        "normalPrice": 220
       },
       {
-        "name": "Tuborg Gold",
-        "size": "33cl",
+        "name": "Efes Malt",
+        "size": "50cl",
         "type": "bottle",
-        "normalPrice": 139
-      }
+        "normalPrice": 220
+      },
+      {
+        "name": "Efes Grenn",
+        "size": "50cl",
+        "type": "bottle",
+        "normalPrice": 240
+      },
+      {
+        "name": "Beck's",
+        "size": "50",
+        "type": "bottle",
+        "normalPrice": 250
+      },
+      {
+        "name": "Bomonti Filtresiz",
+        "size": "50",
+        "type": "bottle",
+        "normalPrice": 260
+      },
+      {
+        "name": "Bud",
+        "size": "50",
+        "type": "bottle",
+        "normalPrice": 270
+      },
+      {
+        "name": "Amsterdam",
+        "size": "50",
+        "type": "bottle",
+        "normalPrice": 360
+      },
+      {
+        "name": "Belfast",
+        "size": "50",
+        "type": "bottle",
+        "normalPrice": 240
+      },
+      {
+        "name": "Erdinger",
+        "size": "33",
+        "type": "bottle",
+        "normalPrice": 360
+      },
     ]
   },
   {
-    "venue": "Marina Tap House",
-    "area": "Kepez",
-    "image": "https://images.unsplash.com/photo-1575444758702-4a6b9222336e?q=80&w=1600",
-    "cardImage": "https://images.unsplash.com/photo-1575444758702-4a6b9222336e?q=80&w=800",
-    "url": "mekan.html?name=Marina%20Tap%20House",
-    "map": "https://www.google.com/maps/search/?api=1&query=Marina%20Tap%20House%20Antalya",
-    "instagram": "https://instagram.com/beerantalya",
-    "rating": "4.2",
-    "reviews": "126",
+    "venue": "Moon Lara",
+    "area": "Lara",
+    "image": "moon2.jpg",
+    "cardImage": "moon1.jpg",
+    "url": "mekan.html?name=Moon%20Lara",
+    "map": "https://www.google.com/maps/search/?api=1&query=Moon%20Lara%20Antalya",
+    "instagram": "https://instagram.com/moonlara.tr",
+    "rating": "4.5",
+    "reviews": "2976",
     "desc": "Rahat ortamı, soğuk bira seçenekleri ve samimi servisiyle popüler bir adres.",
     "openStatus": "● AÇIK",
-    "hours": "18:00 - 02:00",
+    "hours": "10:00 - 04:00",
     "musicTitle": "Modern Bar",
-    "atmosphere": "Uygun Fiyat • Genç • Samimi",
+    "atmosphere": "Uygun Fiyat • Genç • Nargile",
     "featureTitle": "Gece Hayatı",
     "features": "DJ • Bar • Merkezi Konum",
     "gallery": [
@@ -1078,52 +1108,50 @@ const venuesData = [
       {
         "name": "Efes Pilsen",
         "size": "50cl",
-        "type": "draft",
-        "normalPrice": 177,
-        "happyHourPrice": 142,
-        "happyHourEnd": "19:00"
-      },
-      {
-        "name": "Tuborg Gold",
-        "size": "50cl",
-        "type": "draft",
-        "normalPrice": 187
-      },
-      {
-        "name": "Bomonti",
-        "size": "50cl",
-        "type": "draft",
-        "normalPrice": 167
-      },
-      {
-        "name": "Guinness",
-        "size": "50cl",
-        "type": "draft",
-        "normalPrice": 217
-      },
-      {
-        "name": "Carlsberg",
-        "size": "50cl",
-        "type": "draft",
-        "normalPrice": 187
-      },
-      {
-        "name": "Efes Pilsen",
-        "size": "33cl",
         "type": "bottle",
-        "normalPrice": 127
+        "normalPrice": 280        
       },
       {
-        "name": "Tuborg Gold",
-        "size": "33cl",
+        "name": "Efes Malt",
+        "size": "50cl",
         "type": "bottle",
-        "normalPrice": 142
+        "normalPrice": 280
       },
       {
-        "name": "Bomonti",
-        "size": "33cl",
+        "name": "Amsterdam",
+        "size": "50cl",
         "type": "bottle",
-        "normalPrice": 152
+        "normalPrice": 450
+      },
+      {
+        "name": "Beck's",
+        "size": "50cl",
+        "type": "bottle",
+        "normalPrice": 280
+      },
+      {
+        "name": "Bomonti Filtresiz",
+        "size": "50cl",
+        "type": "bottle",
+        "normalPrice": 320
+      },
+      {
+        "name": "Efes Özel Seri",
+        "size": "50cl",
+        "type": "bottle",
+        "normalPrice": 300
+      },
+      {
+        "name": "Miller",
+        "size": "50cl",
+        "type": "bottle",
+        "normalPrice": 300
+      },
+      {
+        "name": "Corona",
+        "size": "50",
+        "type": "bottle",
+        "normalPrice": 400
       }
     ]
   },
