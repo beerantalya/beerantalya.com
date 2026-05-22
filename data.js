@@ -606,22 +606,22 @@ const venuesData = [
     ]
   },
   {
-    "venue": "James Dean",
+    "venue": "Tipsy Old Town",
     "area": "Kaleiçi",
-    "image": "https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=1600",
-    "cardImage": "https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=800",
-    "url": "mekan.html?name=James%20Dean",
-    "map": "https://www.google.com/maps/search/?api=1&query=James%20Dean%20Antalya",
-    "instagram": "https://instagram.com/beerantalya",
-    "rating": "4.6",
-    "reviews": "90",
+    "image": "tıpsy2.jpg",
+    "cardImage": "tıpsy1.jpg",
+    "url": "mekan.html?name=Tipsy%20Old%20Town",
+    "map": "https://www.google.com/maps/search/?api=1&query=Tipsy%20Old%20Town%20Antalya",
+    "instagram": "https://instagram.com/tipsyoldtown",
+    "rating": "4.7",
+    "reviews": "997",
     "desc": "Rahat ortamı, soğuk bira seçenekleri ve samimi servisiyle popüler bir adres.",
     "openStatus": "● AÇIK",
-    "hours": "14:00 - 01:00",
-    "musicTitle": "Canlı Müzik",
-    "atmosphere": "Pub • Bahçe • Samimi",
-    "featureTitle": "Canlı Müzik",
-    "features": "Bahçe • Wi-Fi • Spor Yayını",
+    "hours": "08:00 - 02:00",
+    "musicTitle": "Manzara",
+    "atmosphere": "Pub • Teras • Samimi",
+    "featureTitle": "Deniz Manzarası",
+    "features": "Teras • Wi-Fi ",
     "gallery": [
       [
         "https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=800",
@@ -642,52 +642,52 @@ const venuesData = [
     ],
     "beers": [
       {
-        "name": "Efes Pilsen",
+        "name": "Efes Pilsen Glutensiz",
         "size": "50cl",
-        "type": "draft",
-        "normalPrice": 165
+        "type": "bottle",
+        "normalPrice": 265
       },
       {
         "name": "Tuborg Gold",
         "size": "50cl",
-        "type": "draft",
-        "normalPrice": 175
+        "type": "bottle",
+        "normalPrice": 245
       },
       {
-        "name": "Bomonti",
+        "name": "Tuborg Filtresiz",
         "size": "50cl",
-        "type": "draft",
-        "normalPrice": 190
+        "type": "bottle",
+        "normalPrice": 265
       },
       {
-        "name": "Guinness",
+        "name": "Tuborg Amber",
         "size": "50cl",
-        "type": "draft",
-        "normalPrice": 240
+        "type": "bottle",
+        "normalPrice": 265
       },
       {
         "name": "Carlsberg",
         "size": "50cl",
-        "type": "draft",
-        "normalPrice": 175
+        "type": "bottle",
+        "normalPrice": 255
       },
       {
-        "name": "Efes Pilsen",
-        "size": "33cl",
+        "name": "Guınness",
+        "size": "44cl",
         "type": "bottle",
-        "normalPrice": 115
+        "normalPrice": 380
       },
       {
-        "name": "Tuborg Gold",
+        "name": "Erdinger",
         "size": "33cl",
         "type": "bottle",
-        "normalPrice": 130
+        "normalPrice": 340
       },
       {
-        "name": "Bomonti",
-        "size": "33cl",
+        "name": "American Bud",
+        "size": "50cl",
         "type": "bottle",
-        "normalPrice": 140
+        "normalPrice": 265
       }
     ]
   },
