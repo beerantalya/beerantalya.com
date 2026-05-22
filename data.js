@@ -1334,22 +1334,22 @@ const venuesData = [
     ]
   },
   {
-    "venue": "Cliff Bar",
-    "area": "Lara",
-    "image": "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=1600",
-    "cardImage": "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=800",
-    "url": "mekan.html?name=Cliff%20Bar",
-    "map": "https://www.google.com/maps/search/?api=1&query=Cliff%20Bar%20Antalya",
-    "instagram": "https://instagram.com/beerantalya",
-    "rating": "4.5",
-    "reviews": "153",
+    "venue": "Public",
+    "area": "Konyaaltı",
+    "image": "publıc2.jpg",
+    "cardImage": "publıc1.jpg",
+    "url": "mekan.html?name=Public",
+    "map": "https://www.google.com/maps/search/?api=1&query=Public%20Konyaalt%C4%B1%20Antalya",
+    "instagram": "https://instagram.com/public_konyaalti",
+    "rating": "4.3",
+    "reviews": "864",
     "desc": "Antalya’da bira fiyatları ve pub atmosferiyle öne çıkan keyifli mekan.",
     "openStatus": "● AÇIK",
-    "hours": "16:00 - 03:00",
-    "musicTitle": "DJ Performans",
-    "atmosphere": "Sahil • Ferah • Yazlık",
-    "featureTitle": "Bira Çeşidi",
-    "features": "Geniş Menü • Bahçe • Wi-Fi",
+    "hours": "12:00 - 02:00",
+     "musicTitle": "Spor Yayını",
+    "atmosphere": "Pub • Bahçe • Samimi",
+    "featureTitle": "Canlı Müzik",
+    "features": "Bahçe • Wi-Fi • Spor Yayını",
     "gallery": [
       [
         "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=800",
@@ -1370,66 +1370,132 @@ const venuesData = [
     ],
     "beers": [
       {
-        "name": "Efes Pilsen",
+        "name": "Tuborg",
         "size": "50cl",
         "type": "draft",
-        "normalPrice": 151
-      },
-      {
-        "name": "Tuborg Gold",
-        "size": "50cl",
-        "type": "draft",
-        "normalPrice": 161
-      },
-      {
-        "name": "Bomonti",
-        "size": "50cl",
-        "type": "draft",
-        "normalPrice": 176
-      },
-      {
-        "name": "Guinness",
-        "size": "50cl",
-        "type": "draft",
-        "normalPrice": 226
+        "normalPrice": 190
       },
       {
         "name": "Carlsberg",
         "size": "50cl",
         "type": "draft",
-        "normalPrice": 196
+        "normalPrice": 220
       },
       {
         "name": "Efes Pilsen",
-        "size": "33cl",
-        "type": "bottle",
-        "normalPrice": 136
+        "size": "50cl",
+        "type": "draft",
+        "normalPrice": 190
       },
       {
         "name": "Tuborg Gold",
+        "size": "50cl",
+        "type": "bottle",
+        "normalPrice": 200
+      },
+      {
+        "name": "Carlsberg",
+        "size": "50cl",
+        "type": "bottle",
+        "normalPrice": 230
+      },
+      {
+        "name": "Efes Malt",
+        "size": "50cl",
+        "type": "bottle",
+        "normalPrice": 200
+      },
+      {
+        "name": "Belfast",
+        "size": "50cl",
+        "type": "bottle",
+        "normalPrice": 230
+      },
+      {
+        "name": "Carlsberg Luna",
+        "size": "50cl",
+        "type": "bottle",
+        "normalPrice": 240
+      },
+      {
+        "name": "Bomonti Filtresiz",
+        "size": "50cl",
+        "type": "bottle",
+        "normalPrice": 220
+      },
+      {
+        "name": "Tuborg Filtresiz",
+        "size": "50cl",
+        "type": "bottle",
+        "normalPrice": 230
+      },
+      {
+        "name": "Beck's",
+        "size": "50cl",
+        "type": "bottle",
+        "normalPrice": 270
+      },
+      {
+        "name": "Bud",
+        "size": "50cl",
+        "type": "bottle",
+        "normalPrice": 260
+      },
+      {
+        "name": "Amsterdam",
+        "size": "50cl",
+        "type": "bottle",
+        "normalPrice": 390
+      },
+      {
+        "name": "Blanc",
         "size": "33cl",
         "type": "bottle",
-        "normalPrice": 151
-      }
+        "normalPrice": 240
+      },
+      {
+        "name": "Miller",
+        "size": "33cl",
+        "type": "bottle",
+        "normalPrice": 270
+      },
+      {
+        "name": "Guınness",
+        "size": "50cl",
+        "type": "bottle",
+        "normalPrice": 390
+      },
+      {
+        "name": "Weihenstephaner",
+        "size": "33cl",
+        "type": "bottle",
+        "normalPrice": 420
+      },
+      {
+        "name": "Alkolsüz Bira Peja",
+        "size": "33cl",
+        "type": "bottle",
+        "normalPrice": 190
+      },
     ]
   },
   {
-    "venue": "Orange Pub",
-    "area": "Muratpaşa",
-    "image": "https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=1600",
-    "cardImage": "https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=800",
-    "url": "mekan.html?name=Orange%20Pub",
-    "map": "https://www.google.com/maps/search/?api=1&query=Orange%20Pub%20Antalya",
+    "venue": "Holly Garden",
+    "area": "Konyaaltı",
+    "image": "hollygar2.jpg",
+    "cardImage": "hollygar1.jpg",
+    "url": "mekan.html?name=Holly%20Garden",
+    "map": "https://www.google.com/maps/search/?api=1&query=Holly%20Garden%20Antalya",
     "instagram": "https://instagram.com/beerantalya",
-    "rating": "4.6",
-    "reviews": "162",
+    "rating": "4.7",
+    "reviews": "326",
     "desc": "Rahat ortamı, soğuk bira seçenekleri ve samimi servisiyle popüler bir adres.",
     "openStatus": "● AÇIK",
-    "hours": "17:00 - 00:00",
-    "musicTitle": "Rahat Pub",
-    "atmosphere": "Geniş • Sosyal • Beer House",
-    "featureTitle": "Açık Alan",
-    "features": "Teras • Açık Alan • Sosyal",
+    "hours": "13:00 - 02:00",
+    "musicTitle": "Spor Yayını",
+    "atmosphere": "Pub • Bahçe • Samimi",
+    "featureTitle": "Canlı Müzik",
+    "features": "Bahçe • Wi-Fi • Spor Yayını",
     "gallery": [
       [
         "https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=800",
@@ -1453,51 +1519,49 @@ const venuesData = [
         "name": "Efes Pilsen",
         "size": "50cl",
         "type": "draft",
-        "normalPrice": 154
-      },
-      {
-        "name": "Tuborg Gold",
-        "size": "50cl",
-        "type": "draft",
-        "normalPrice": 164,
-        "happyHourPrice": 139,
-        "happyHourEnd": "20:00"
-      },
-      {
-        "name": "Bomonti",
-        "size": "50cl",
-        "type": "draft",
-        "normalPrice": 179
-      },
-      {
-        "name": "Guinness",
-        "size": "50cl",
-        "type": "draft",
-        "normalPrice": 229
-      },
-      {
-        "name": "Carlsberg",
-        "size": "50cl",
-        "type": "draft",
-        "normalPrice": 199
+        "normalPrice": 155
       },
       {
         "name": "Efes Pilsen",
         "size": "33cl",
-        "type": "bottle",
-        "normalPrice": 139
+        "type": "draft",
+        "normalPrice": 135        
       },
       {
-        "name": "Tuborg Gold",
-        "size": "33cl",
+        "name": "Efes Pilsen",
+        "size": "50cl",
         "type": "bottle",
-        "normalPrice": 154
+        "normalPrice": 195
       },
       {
-        "name": "Bomonti",
-        "size": "33cl",
+        "name": "Efes Malt",
+        "size": "50cl",
         "type": "bottle",
-        "normalPrice": 129
+        "normalPrice": 195
+      },
+      {
+        "name": "Bomonti Filtresiz",
+        "size": "50cl",
+        "type": "bottle",
+        "normalPrice": 235
+      },
+      {
+        "name": "Beck's",
+        "size": "50cl",
+        "type": "bottle",
+        "normalPrice": 235
+      },
+      {
+        "name": "Belfast",
+        "size": "50cl",
+        "type": "bottle",
+        "normalPrice": 235
+      },
+      {
+        "name": "Bud",
+        "size": "50cl",
+        "type": "bottle",
+        "normalPrice": 235
       }
     ]
   },
@@ -1606,7 +1670,7 @@ const venuesData = [
     "desc": "Canlı müzik, geniş oturma alanı ve güncel bira menüsüyle dikkat çeken mekan.",
     "openStatus": "● AÇIK",
     "hours": "14:00 - 01:00",
-    "musicTitle": "Canlı Müzik",
+    "musicTitle": "Spor Yayını",
     "atmosphere": "Pub • Bahçe • Samimi",
     "featureTitle": "Canlı Müzik",
     "features": "Bahçe • Wi-Fi • Spor Yayını",
