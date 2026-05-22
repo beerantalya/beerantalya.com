@@ -1156,22 +1156,22 @@ const venuesData = [
     ]
   },
   {
-    "venue": "Konyaaltı Beer Garden",
-    "area": "Kaleiçi",
+    "venue": "6' Pub",
+    "area": "Konyaaltı",
     "image": "https://images.unsplash.com/photo-1566417713940-fe7c737a9ef2?q=80&w=1600",
-    "cardImage": "https://images.unsplash.com/photo-1566417713940-fe7c737a9ef2?q=80&w=800",
-    "url": "mekan.html?name=Konyaaltı%20Beer%20Garden",
-    "map": "https://www.google.com/maps/search/?api=1&query=Konyaaltı%20Beer%20Garden%20Antalya",
-    "instagram": "https://instagram.com/beerantalya",
-    "rating": "4.3",
-    "reviews": "135",
+    "cardImage": "6pub.jpg",
+    "url": "mekan.html?name=6'%20Pub",
+    "map": "https://www.google.com/maps/search/?api=1&query=6%20Pub%20Antalya",
+    "instagram": "https://instagram.com/6pubantalya",
+    "rating": "4.9",
+    "reviews": "29",
     "desc": "Arkadaşlarla gidilecek, fiyat-performans açısından güçlü pub seçeneklerinden biri.",
     "openStatus": "● AÇIK",
-    "hours": "14:00 - 01:00",
+    "hours": "11:00 - 03:00",
     "musicTitle": "Canlı Müzik",
     "atmosphere": "Pub • Bahçe • Samimi",
     "featureTitle": "Canlı Müzik",
-    "features": "Bahçe • Wi-Fi • Spor Yayını",
+    "features": "Deniz • Wi-Fi • Spor Yayını",
     "gallery": [
       [
         "https://images.unsplash.com/photo-1566417713940-fe7c737a9ef2?q=80&w=800",
@@ -1192,78 +1192,48 @@ const venuesData = [
     ],
     "beers": [
       {
-        "name": "Efes Pilsen",
+        "name": "Tuborg",
         "size": "50cl",
         "type": "draft",
-        "normalPrice": 180
-      },
-      {
-        "name": "Tuborg Gold",
-        "size": "50cl",
-        "type": "draft",
-        "normalPrice": 155
-      },
-      {
-        "name": "Bomonti",
-        "size": "50cl",
-        "type": "draft",
-        "normalPrice": 170
-      },
-      {
-        "name": "Guinness",
-        "size": "50cl",
-        "type": "draft",
-        "normalPrice": 220
+        "normalPrice": 136
       },
       {
         "name": "Carlsberg",
         "size": "50cl",
         "type": "draft",
-        "normalPrice": 190
+        "normalPrice": 146
       },
       {
-        "name": "Efes Pilsen",
-        "size": "33cl",
+        "name": "Tuborg",
+        "size": "50cl",
         "type": "bottle",
-        "normalPrice": 130
+        "normalPrice": 196
       },
       {
-        "name": "Tuborg Gold",
-        "size": "33cl",
+        "name": "Carlsberg",
+        "size": "50cl",
         "type": "bottle",
-        "normalPrice": 145
-      },
-      {
-        "name": "Bomonti",
-        "size": "33cl",
-        "type": "bottle",
-        "normalPrice": 155
-      },
-      {
-        "name": "Corona",
-        "size": "33cl",
-        "type": "bottle",
-        "normalPrice": 155
+        "normalPrice": 206
       }
     ]
   },
   {
-    "venue": "Sahil Pub",
+    "venue": "Cubana Pub & Cocktail",
     "area": "Konyaaltı",
-    "image": "https://images.unsplash.com/photo-1525268323446-0505b6fe7778?q=80&w=1600",
-    "cardImage": "https://images.unsplash.com/photo-1525268323446-0505b6fe7778?q=80&w=800",
-    "url": "mekan.html?name=Sahil%20Pub",
-    "map": "https://www.google.com/maps/search/?api=1&query=Sahil%20Pub%20Antalya",
-    "instagram": "https://instagram.com/beerantalya",
+    "image": "cubana2.jpg",
+    "cardImage": "cubana1.jpg",
+    "url": "mekan.html?name=Cubana%20Pub%20%26%20Cocktail",
+    "map": "https://www.google.com/maps/search/?api=1&query=Cubana%20Pub%20%26%20Cocktail%20Antalya",
+    "instagram": "https://instagram.com/cubanaturkey",
     "rating": "4.4",
-    "reviews": "144",
+    "reviews": "1108",
     "desc": "Canlı müzik, geniş oturma alanı ve güncel bira menüsüyle dikkat çeken mekan.",
     "openStatus": "● AÇIK",
-    "hours": "15:00 - 02:00",
+    "hours": "13:00 - 01:00",
     "musicTitle": "Akustik Müzik",
-    "atmosphere": "Modern • Hareketli • Bar",
-    "featureTitle": "Spor Yayını",
-    "features": "Wi-Fi • Maç Yayını • Bahçe",
+    "atmosphere": "Sahil • Ferah • Yazlık",
+    "featureTitle": "Bira Çeşidi",
+    "features": "Geniş Menü • Bahçe • Wi-Fi",
     "gallery": [
       [
         "https://images.unsplash.com/photo-1525268323446-0505b6fe7778?q=80&w=800",
@@ -1287,62 +1257,80 @@ const venuesData = [
         "name": "Efes Pilsen",
         "size": "50cl",
         "type": "draft",
-        "normalPrice": 183
+        "normalPrice": 160
       },
       {
-        "name": "Tuborg Gold",
+        "name": "Beck's",
         "size": "50cl",
         "type": "draft",
-        "normalPrice": 158
+        "normalPrice": 200
       },
       {
-        "name": "Bomonti",
+        "name": "Bud",
         "size": "50cl",
         "type": "draft",
-        "normalPrice": 173
+        "normalPrice": 220
       },
       {
-        "name": "Guinness",
-        "size": "50cl",
+        "name": "Erdinger",
+        "size": "33cl",
         "type": "draft",
-        "normalPrice": 223
+        "normalPrice": 290
       },
       {
-        "name": "Carlsberg",
+        "name": "Bomonti Filtresiz",
         "size": "50cl",
-        "type": "draft",
-        "normalPrice": 193
+        "type": "bottle",
+        "normalPrice": 240
       },
       {
         "name": "Efes Pilsen",
-        "size": "33cl",
+        "size": "50cl",
         "type": "bottle",
-        "normalPrice": 133
+        "normalPrice": 200
       },
       {
-        "name": "Tuborg Gold",
-        "size": "33cl",
+        "name": "Efes Malt",
+        "size": "50cl",
         "type": "bottle",
-        "normalPrice": 148
+        "normalPrice": 200
       },
       {
-        "name": "Bomonti",
-        "size": "33cl",
+        "name": "Beck's",
+        "size": "50cl",
         "type": "bottle",
-        "normalPrice": 158
+        "normalPrice": 240
       },
       {
+        "name": "Bud",
+        "size": "50cl",
+        "type": "bottle",
+        "normalPrice": 260
+      },
+      {
+        "name": "Amsterdam",
+        "size": "50cl",
+        "type": "bottle",
+        "normalPrice": 450
+      },
+        {
         "name": "Corona",
-        "size": "33cl",
+        "size": "35,5cl",
         "type": "bottle",
-        "normalPrice": 158
+        "normalPrice": 400
       },
-      {
-        "name": "Budweiser",
+        {
+        "name": "Hoegaarden",
         "size": "33cl",
         "type": "bottle",
-        "normalPrice": 158
-      }
+        "normalPrice": 350
+      },
+        {
+        "name": "Heineken",
+        "size": "33cl",
+        "type": "bottle",
+        "normalPrice": 350
+      },
     ]
   },
   {
