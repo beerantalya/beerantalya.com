@@ -291,51 +291,7 @@ function BA_getPriceLabel(item) {
   }
 
   return `<b class="new-price">${currentPrice}₺</b>`;
-}
-
-/* TEK VE TEMİZ FOTOĞRAF BÜYÜTME SİSTEMİ */
-document.addEventListener("click", function (e) {
-  const clickedImg = e.target.closest("img");
-
-  if (!clickedImg) return;
-  if (clickedImg.classList.contains("ba-popup-img")) return;
-
-  const src = clickedImg.currentSrc || clickedImg.src;
-  if (!src) return;
-
-  const overlay = document.createElement("div");
-  overlay.className = "ba-image-popup";
-  overlay.style.position = "fixed";
-  overlay.style.inset = "0";
-  overlay.style.background = "rgba(0,0,0,0.94)";
-  overlay.style.display = "flex";
-  overlay.style.alignItems = "center";
-  overlay.style.justifyContent = "center";
-  overlay.style.zIndex = "999999";
-  overlay.style.cursor = "zoom-out";
-  overlay.style.padding = "24px";
-
-  const bigImg = document.createElement("img");
-  bigImg.className = "ba-popup-img";
-  bigImg.src = src;
-  bigImg.style.maxWidth = "92%";
-  bigImg.style.maxHeight = "92%";
-  bigImg.style.borderRadius = "18px";
-  bigImg.style.boxShadow = "0 0 45px rgba(0,0,0,0.85)";
-  bigImg.style.objectFit = "contain";
-
-  bigImg.addEventListener("click", function (event) {
-    event.stopPropagation();
-  });
-
-  overlay.addEventListener("click", function () {
-    overlay.remove();
-  });
-
-  overlay.appendChild(bigImg);
-  document.body.appendChild(overlay);
-});
-
+};
 const heroSlides = document.querySelectorAll(".hero-slide");
 let heroIndex = 0;
 
