@@ -1566,261 +1566,87 @@ const venuesData = [
     ]
   },
   {
-    "venue": "Edinburgh Social House",
-    "area": "KaleiÃ§i",
-    "image": "edÄ±n2.jpg",
-    "cardImage": "edÄ±n.jpg",
-    "url": "mekan.html?name=Edinburgh%20Social%20House",
-    "map": "https://www.google.com/maps/search/?api=1&query=Edinburgh%20Social%20House%20Antalya",
-    "instagram": "https://instagram.com/edinburghsocialhouse",
-    "rating": "4.4",
-    "reviews": "1240",
-    "desc": "ArkadaÅŸlarla gidilecek, fiyat-performans aÃ§Ä±sÄ±ndan gÃ¼Ã§lÃ¼ pub seÃ§eneklerinden biri.",
-    "openStatus": "â— AÃ‡IK",
-    "hours": "10:00 - 01:30",
-    "musicTitle": "Ä°rlanda Bar",
-    "atmosphere": "Uygun Fiyat â€¢ GenÃ§ â€¢ Samimi",
-    "featureTitle": "Gece HayatÄ±",
-    "features": " Bar â€¢ Merkezi Konum",
-    "gallery": [
-      [
-        "https://images.unsplash.com/photo-1544145945-f90425340c7e?q=80&w=800",
-        "Ä°Ã§ Mekan"
-      ],
-      [
-        "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?q=80&w=800",
-        "Ä°Ã§ecekler"
-      ],
-      [
-        "https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=800",
-        "Atmosfer"
-      ],
-      [
-        "https://images.unsplash.com/photo-1575444758702-4a6b9222336e?q=80&w=800",
-        "Sosyal Alan"
-      ]
-    ],
-    "beers": [
-      {
-        "name": "Carlsberg Luna",
-        "size": "50cl",
-        "type": "draft",
-        "normalPrice": 285
-      },
-      {
-        "name": "Tuborg",
-        "size": "50cl",
-        "type": "draft",
-        "normalPrice": 250
-      },
-      {
-        "name": "Stella Artois",
-        "size": "50cl",
-        "type": "draft",
-        "normalPrice": 300
-      },
-      {
-        "name": "Guinness",
-        "size": "50cl",
-        "type": "draft",
-        "normalPrice": 355
-      },
-      {
-        "name": "Weihenstephan",
-        "size": "50cl",
-        "type": "draft",
-        "normalPrice": 355
-      },
-      {
-        "name": "Kronenbourg Blanc",
-        "size": "50cl",
-        "type": "draft",
-        "normalPrice": 355
-      },
-      {
-        "name": "Kilkenny",
-        "size": "50cl",
-        "type": "draft",
-        "normalPrice": 355
-      },
-      {
-        "name": "Tuborg Amber",
-        "size": "50cl",
-        "type": "bottle",
-        "normalPrice": 275
-      },
-      {
-        "name": "Bomonti Filtresiz",
-        "size": "50cl",
-        "type": "bottle",
-        "normalPrice": 275
-      },
-      {
-        "name": "Corona",
-        "size": "33cl",
-        "type": "bottle",
-        "normalPrice": 365
-      },
-      {
-        "name": "Heineken",
-        "size": "33cl",
-        "type": "bottle",
-        "normalPrice": 365
-      },
-      {
-        "name": "Budweiser",
-        "size": "33cl",
-        "type": "bottle",
-        "normalPrice": 365
-      },
-      {
-        "name": "Carlsberg Elephant",
-        "size": "50cl",
-        "type": "bottle",
-        "normalPrice": 480
-      },
-      {
-        "name": "Efes Malt",
-        "size": "50cl",
-        "type": "bottle",
-        "normalPrice": 270
-      },
-      {
-        "name": "Tuborg Smooth",
-        "size": "50cl",
-        "type": "bottle",
-        "normalPrice": 275
-      },    
-    ]
-  },
-  {
-    "venue": "Mono",
-    "area": "KaleiÃ§i",
-    "image": "mono2.jpg",
-    "cardImage": "mono.jpg",
-    "url": "mekan.html?name=Mono",
-    "map": "https://www.google.com/maps/search/?api=1&query=Mono%20Antalya",
-    "instagram": "https://instagram.com/monoterrace",
-    "rating": "4.5",
-    "reviews": "1760",
-    "desc": "CanlÄ± mÃ¼zik, geniÅŸ oturma alanÄ± ve gÃ¼ncel bira menÃ¼sÃ¼yle dikkat Ã§eken mekan.",
-    "openStatus": "â— AÃ‡IK",
-    "hours": "10:00 - 02:00",
-    "musicTitle": "Terrace",
-    "atmosphere": "Pub â€¢ View â€¢ Samimi",
-    "featureTitle": "Deniz Manzara",
-    "features": "BahÃ§e â€¢ Wi-Fi â€¢ Gastro",
-    "gallery": [
-      [
-        "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?q=80&w=800",
-        "Ä°Ã§ Mekan"
-      ],
-      [
-        "https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=800",
-        "Bar AlanÄ±"
-      ],
-      [
-        "https://images.unsplash.com/photo-1575444758702-4a6b9222336e?q=80&w=800",
-        "BahÃ§e / Teras"
-      ],
-      [
-        "https://images.unsplash.com/photo-1566417713940-fe7c737a9ef2?q=80&w=800",
-        "CanlÄ± MÃ¼zik"
-      ]
-    ],
-    "beers": [
-      {
-        "name": "Efes Pilsen",
-        "size": "50cl",
-        "type": "draft",
-        "normalPrice": 150
-      },
-      {
-        "name": "Bud",
-        "size": "50cl",
-        "type": "draft",
-        "normalPrice": 170
-      },
-      {
-        "name": "Efes Pilsen",
-        "size": "50cl",
-        "type": "bottle",
-        "normalPrice": 190
-      },
-      {
-        "name": "Efes Malt",
-        "size": "50cl",
-        "type": "bottle",
-        "normalPrice": 190
-      },
-      {
-        "name": "Efes Ã–zel Seri",
-        "size": "50cl",
-        "type": "bottle",
-        "normalPrice": 200
-      },
-      {
-        "name": "Efes Rezerv",
-        "size": "50cl",
-        "type": "bottle",
-        "normalPrice": 210
-      },
-      {
-        "name": "Belfast",
-        "size": "200cl",
-        "type": "bottle",
-        "normalPrice": 200
-      },
-      {
-        "name": "Bomonti Filtresiz",
-        "size": "50cl",
-        "type": "bottle",
-        "normalPrice": 210
-      },
-      {
-        "name": "Corona",
-        "size": "35cl",
-        "type": "bottle",
-        "normalPrice": 270
-      },
-      {
-        "name": "Bud",
-        "size": "50cl",
-        "type": "bottle",
-        "normalPrice": 210
-      },
-      {
-        "name": "Beck's",
-        "size": "50cl",
-        "type": "bottle",
-        "normalPrice": 210
-      },
-      {
-        "name": "Miller",
-        "size": "33cl",
-        "type": "bottle",
-        "normalPrice": 200
-      },
-      {
-        "name": "Amsterdam",
-        "size": "50cl",
-        "type": "bottle",
-        "normalPrice": 300
-      },
-      {
-        "name": "Hoegarden",
-        "size": "33cl",
-        "type": "bottle",
-        "normalPrice": 270
-      },
-      {
-        "name": "Erdinger",
-        "size": "33cl",
-        "type": "bottle",
-        "normalPrice": 270
-      },
-    ]
-  }
+  "venue": "Edinburgh Social House",
+  "area": "Kaleiçi",
+  "image": "edın2.jpg",
+  "cardImage": "edın.jpg",
+  "url": "mekan.html?name=Edinburgh%20Social%20House",
+  "map": "https://www.google.com/maps/search/?api=1&query=Edinburgh%20Social%20House%20Antalya",
+  "instagram": "https://instagram.com/edinburghsocialhouse",
+  "rating": "4.4",
+  "reviews": "1240",
+  "desc": "Arkadaşlarla gidilecek, fiyat-performans açısından güçlü pub seçeneklerinden biri.",
+  "openStatus": "● AÇIK",
+  "hours": "10:00 - 01:30",
+  "musicTitle": "İrlanda Bar",
+  "atmosphere": "Uygun Fiyat • Genç • Samimi",
+  "featureTitle": "Gece Hayatı",
+  "features": "Bar • Merkezi Konum",
+  "gallery": [
+    ["https://images.unsplash.com/photo-1544145945-f90425340c7e?q=80&w=800", "İç Mekan"],
+    ["https://images.unsplash.com/photo-1572116469696-31de0f17cc34?q=80&w=800", "İçecekler"],
+    ["https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=800", "Atmosfer"],
+    ["https://images.unsplash.com/photo-1575444758702-4a6b9222336e?q=80&w=800", "Sosyal Alan"]
+  ],
+  "beers": [
+    { "name": "Carlsberg Luna", "size": "50cl", "type": "draft", "normalPrice": 285 },
+    { "name": "Tuborg", "size": "50cl", "type": "draft", "normalPrice": 250 },
+    { "name": "Stella Artois", "size": "50cl", "type": "draft", "normalPrice": 300 },
+    { "name": "Guinness", "size": "50cl", "type": "draft", "normalPrice": 355 },
+    { "name": "Weihenstephan", "size": "50cl", "type": "draft", "normalPrice": 355 },
+    { "name": "Kronenbourg Blanc", "size": "50cl", "type": "draft", "normalPrice": 355 },
+    { "name": "Kilkenny", "size": "50cl", "type": "draft", "normalPrice": 355 },
+    { "name": "Tuborg Amber", "size": "50cl", "type": "bottle", "normalPrice": 275 },
+    { "name": "Bomonti Filtresiz", "size": "50cl", "type": "bottle", "normalPrice": 275 },
+    { "name": "Corona", "size": "33cl", "type": "bottle", "normalPrice": 365 },
+    { "name": "Heineken", "size": "33cl", "type": "bottle", "normalPrice": 365 },
+    { "name": "Budweiser", "size": "33cl", "type": "bottle", "normalPrice": 365 },
+    { "name": "Carlsberg Elephant", "size": "50cl", "type": "bottle", "normalPrice": 480 },
+    { "name": "Efes Malt", "size": "50cl", "type": "bottle", "normalPrice": 270 },
+    { "name": "Tuborg Smooth", "size": "50cl", "type": "bottle", "normalPrice": 275 }
+  ]
+},
+{
+  "venue": "Mono",
+  "area": "Kaleiçi",
+  "image": "mono2.jpg",
+  "cardImage": "mono.jpg",
+  "url": "mekan.html?name=Mono",
+  "map": "https://www.google.com/maps/search/?api=1&query=Mono%20Antalya",
+  "instagram": "https://instagram.com/monoterrace",
+  "rating": "4.5",
+  "reviews": "1760",
+  "desc": "Canlı müzik, geniş oturma alanı ve güncel bira menüsüyle dikkat çeken mekan.",
+  "openStatus": "● AÇIK",
+  "hours": "10:00 - 02:00",
+  "musicTitle": "Terrace",
+  "atmosphere": "Pub • View • Samimi",
+  "featureTitle": "Deniz Manzara",
+  "features": "Bahçe • Wi-Fi • Gastro",
+  "gallery": [
+    ["https://images.unsplash.com/photo-1572116469696-31de0f17cc34?q=80&w=800", "İç Mekan"],
+    ["https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=800", "Bar Alanı"],
+    ["https://images.unsplash.com/photo-1575444758702-4a6b9222336e?q=80&w=800", "Bahçe / Teras"],
+    ["https://images.unsplash.com/photo-1566417713940-fe7c737a9ef2?q=80&w=800", "Canlı Müzik"]
+  ],
+  "beers": [
+    { "name": "Efes Pilsen", "size": "50cl", "type": "draft", "normalPrice": 150 },
+    { "name": "Bud", "size": "50cl", "type": "draft", "normalPrice": 170 },
+    { "name": "Efes Pilsen", "size": "50cl", "type": "bottle", "normalPrice": 190 },
+    { "name": "Efes Malt", "size": "50cl", "type": "bottle", "normalPrice": 190 },
+    { "name": "Efes Özel Seri", "size": "50cl", "type": "bottle", "normalPrice": 200 },
+    { "name": "Efes Rezerv", "size": "50cl", "type": "bottle", "normalPrice": 210 },
+    { "name": "Belfast", "size": "200cl", "type": "bottle", "normalPrice": 200 },
+    { "name": "Bomonti Filtresiz", "size": "50cl", "type": "bottle", "normalPrice": 210 },
+    { "name": "Corona", "size": "35cl", "type": "bottle", "normalPrice": 270 },
+    { "name": "Bud", "size": "50cl", "type": "bottle", "normalPrice": 210 },
+    { "name": "Beck's", "size": "50cl", "type": "bottle", "normalPrice": 210 },
+    { "name": "Miller", "size": "33cl", "type": "bottle", "normalPrice": 200 },
+    { "name": "Amsterdam", "size": "50cl", "type": "bottle", "normalPrice": 300 },
+    { "name": "Hoegaarden", "size": "33cl", "type": "bottle", "normalPrice": 270 },
+    { "name": "Erdinger", "size": "33cl", "type": "bottle", "normalPrice": 270 }
+  ]
+}
   ];
 
 function parseTimeToMinutes(value){
