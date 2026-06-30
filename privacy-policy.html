@@ -1,0 +1,53 @@
+cat > privacy-policy.html <<'EOF'
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BeerAntalya Gizlilik Politikasý</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #070707;
+      color: #f5f5f5;
+      line-height: 1.7;
+      padding: 24px;
+      max-width: 900px;
+      margin: auto;
+    }
+    h1, h2 { color: #f7b91e; }
+    a { color: #f7b91e; }
+  </style>
+</head>
+<body>
+  <h1>BeerAntalya Gizlilik Politikasý</h1>
+  <p><strong>Son güncelleme:</strong> 30 Haziran 2026</p>
+
+  <p>BeerAntalya, kullanýcý gizliliðine önem verir. Bu gizlilik politikasý, BeerAntalya mobil uygulamasý ve web sitesi üzerinden hangi bilgilerin nasýl iþlendiðini açýklar.</p>
+
+  <h2>Toplanan Bilgiler</h2>
+  <p>BeerAntalya doðrudan kullanýcý hesabý oluþturmaz ve kullanýcýdan ad, soyad, kimlik numarasý gibi kiþisel bilgiler talep etmez.</p>
+  <p>Uygulama, kullanýcý deneyimini geliþtirmek için anonim kullaným verileri, cihaz bilgileri ve hata kayýtlarý gibi teknik veriler iþleyebilir.</p>
+
+  <h2>Konum Bilgisi</h2>
+  <p>Uygulama, harita ve yakýndaki mekan özelliklerini sunmak amacýyla konum izni isteyebilir. Konum bilgisi yalnýzca kullanýcý izin verdiðinde kullanýlýr.</p>
+
+  <h2>Reklam ve Analiz Hizmetleri</h2>
+  <p>BeerAntalya ilerleyen sürümlerde Google AdMob, Google Analytics veya benzeri üçüncü taraf hizmetleri kullanabilir. Bu hizmetler anonim kullaným verileri ve reklam tanýmlayýcýlarý iþleyebilir.</p>
+
+  <h2>Verilerin Paylaþýlmasý</h2>
+  <p>BeerAntalya kullanýcý verilerini satmaz. Yasal zorunluluklar dýþýnda kullanýcý verileri üçüncü kiþilerle paylaþýlmaz.</p>
+
+  <h2>Çocuklarýn Gizliliði</h2>
+  <p>BeerAntalya çocuklara yönelik bir uygulama deðildir. Uygulama 18 yaþ ve üzeri kullanýcýlar için tasarlanmýþtýr.</p>
+
+  <h2>Ýletiþim</h2>
+  <p>Gizlilik politikasý hakkýnda sorularýnýz için bizimle iletiþime geçebilirsiniz:</p>
+  <p>E-posta: <a href="mailto:abdullahkurtoglu02@gmail.com">abdullahkurtoglu02@gmail.com</a></p>
+  <p>Web sitesi: <a href="https://beerantalya.com">https://beerantalya.com</a></p>
+</body>
+</html>
+EOF
+git add privacy-policy.html
+git commit -m "Add privacy policy page"
+git push
